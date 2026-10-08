@@ -1,0 +1,9 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "dev": "vite --host 127.0.0.1", "build": "vite build" },
+  "dependencies": { "react": "^19.0.0", "react-dom": "^19.0.0", "react-router": "^7.0.0" },
+  "devDependencies": { "vite": "^8.3.4", "@vitejs/plugin-react": "^6.1.2", "tailwindcss": "^4.3.3", "@tailwindcss/vite": "^4.3.3" }
+}
