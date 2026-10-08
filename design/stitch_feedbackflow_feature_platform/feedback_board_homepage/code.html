@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#eaf1ff",
+          "status-review-text": "#6D28D9",
+          "on-surface-variant": "#45464d",
+          "on-tertiary": "#ffffff",
+          "status-planned-text": "#B45309",
+          "surface-container-lowest": "#ffffff",
+          "status-review-border": "#DDD6FE",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tag-integration-text": "#7E22CE",
+          "interactive-active-bg": "#EEF2FF",
+          "surface-tint": "#565e74",
+          "status-progress-border": "#C7D2FE",
+          "secondary": "#4b41e1",
+          "tertiary-container": "#271901",
+          "interactive-active-text": "#4338CA",
+          "tag-feature-bg": "#F1F5F9",
+          "outline-variant": "#c6c6cd",
+          "status-review-bg": "#F5F3FF",
+          "outline": "#76777d",
+          "on-tertiary-fixed": "#271901",
+          "status-planned-border": "#FDE68A",
+          "error": "#ba1a1a",
+          "border-subtle": "#E2E8F0",
+          "tag-integration-bg": "#FAF5FF",
+          "tertiary-fixed": "#fcdeb5",
+          "on-primary-container": "#7c839b",
+          "status-completed-border": "#A7F3D0",
+          "error-container": "#ffdad6",
+          "inverse-surface": "#213145",
+          "surface": "#f8f9ff",
+          "on-secondary-fixed": "#0f0069",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d3e4fe",
+          "tag-feature-text": "#334155",
+          "on-primary-fixed-variant": "#3f465c",
+          "status-progress-text": "#4338CA",
+          "surface-container-low": "#eff4ff",
+          "on-error-container": "#93000a",
+          "tag-improvement-bg": "#F0FDF4",
+          "on-secondary-fixed-variant": "#3323cc",
+          "interactive-active-border": "#6366F1",
+          "surface-container": "#e5eeff",
+          "tag-improvement-text": "#15803D",
+          "tertiary-fixed-dim": "#dec29a",
+          "border-strong": "#CBD5E1",
+          "border-focus": "#0F172A",
+          "inverse-primary": "#bec6e0",
+          "tag-bug-text": "#B91C1C",
+          "on-primary": "#ffffff",
+          "text-secondary": "#475569",
+          "secondary-fixed-dim": "#c3c0ff",
+          "surface-card": "#FFFFFF",
+          "text-muted": "#94A3B8",
+          "surface-elevated": "#FFFFFF",
+          "primary-container": "#131b2e",
+          "surface-variant": "#d3e4fe",
+          "surface-bright": "#f8f9ff",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed-variant": "#574425",
+          "text-primary": "#0F172A",
+          "primary": "#000000",
+          "status-progress-bg": "#EEF2FF",
+          "status-completed-bg": "#ECFDF5",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "tag-bug-bg": "#FEF2F2",
+          "tertiary": "#000000",
+          "on-secondary-container": "#fffbff",
+          "on-tertiary-container": "#98805d",
+          "surface-canvas": "#F8FAFC",
+          "background": "#f8f9ff",
+          "primary-fixed": "#dae2fd",
+          "secondary-fixed": "#e2dfff",
+          "surface-container-high": "#dce9ff",
+          "status-completed-text": "#047857",
+          "status-planned-bg": "#FFFBEB",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#645efb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "margin": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-md": "0.75rem",
+          "margin-lg": "2rem",
+          "space-xs": "0.25rem",
+          "gutter-lg": "1.5rem",
+          "margin-md": "1.5rem",
+          "space-lg": "1.25rem"
+        },
+        "fontFamily": {
+          "headline-xl-mobile": ["Geist"],
+          "label-sm": ["Geist"],
+          "headline-md": ["Geist"],
+          "body-sm": ["Geist"],
+          "headline-xl": ["Geist"],
+          "body-md": ["Geist"],
+          "mono-metric": ["JetBrains Mono"],
+          "headline-lg": ["Geist"],
+          "label-md": ["Geist"],
+          "headline-sm": ["Geist"],
+          "body-lg": ["Geist"]
+        },
+        "fontSize": {
+          "headline-xl-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "mono-metric": ["12px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-card/95 backdrop-blur-md border-b border-border-subtle"><div class="h-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2 text-text-primary no-underline" data-path="feedback-board" href="#"><div class="w-6 h-6 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[16px]">bolt</span></div><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary">FeedbackFlow</span></a><nav class="hidden md:flex items-center gap-6 h-14" data-active-classes="text-text-primary font-semibold border-b-2 border-text-primary"><a aria-current="page" class="h-full inline-flex items-center px-1 transition-colors text-text-primary font-semibold border-b-2 border-text-primary" data-path="feedback-board" href="#">Feedback Board</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-roadmap" href="#">Public Roadmap</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-dashboard" href="#">Admin Dashboard</a></nav></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-canvas text-text-secondary hover:border-border-strong text-body-sm font-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-text-muted">search</span><span>Search feedback...</span><kbd class="hidden lg:inline-block px-1.5 py-0.5 rounded bg-surface border border-border-subtle font-mono-metric text-mono-metric text-text-muted">⌘K</kbd></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Submit Feedback</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-14 bg-surface"><div class="flex flex-col w-full">
+<div class="relative overflow-hidden bg-surface-canvas pt-10 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8">
+<div class="absolute -top-24 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-72 h-72 bg-interactive-active-border/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end justify-between gap-8 relative z-10">
+<div class="max-w-2xl">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-secondary/10 text-secondary font-mono-metric text-mono-metric mb-4">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>COMMUNITY BACKLOG · Q2 2025</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">Shape what we build next.</h1>
+<p class="font-body-lg text-body-lg text-text-secondary mt-3 max-w-xl">
+          Share your ideas, vote on upcoming features, and track our engineering progress in real time.
+        </p>
+</div>
+<div class="flex items-center gap-3 self-start md:self-auto">
+<div class="hidden sm:flex flex-col text-right mr-2">
+<span class="font-mono-metric text-mono-metric text-text-muted">OPEN FEEDBACK</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">142 Proposals</span>
+</div>
+<button class="inline-flex items-center gap-2 h-10 px-5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 transition-all shadow-sm active:scale-95" id="openModalBtn" type="button">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>Submit Feedback</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-6xl mx-auto w-full px-4 sm:px-6 lg:px-8 -mt-4 relative z-20 pb-16">
+<div class="bg-surface-card rounded-xl p-4 sm:p-5 shadow-sm space-y-4">
+<div class="flex flex-col lg:flex-row gap-3 items-stretch lg:items-center justify-between">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-text-muted text-[20px]">search</span>
+<input class="w-full h-10 pl-10 pr-12 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:bg-surface-card focus:outline-none placeholder:text-text-muted transition-all" id="feedbackSearch" placeholder="Search proposals, keywords, or tags..." type="text"/>
+<div class="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 font-mono-metric text-mono-metric text-text-muted bg-surface-canvas px-1.5 py-0.5 rounded">
+<span>⌘</span><span>K</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2.5">
+<div class="inline-flex items-center rounded-lg bg-surface p-1 text-text-secondary text-body-sm font-body-sm">
+<span class="px-2 text-text-muted font-label-sm text-label-sm uppercase">Sort:</span>
+<button class="sort-toggle px-3 py-1 rounded font-label-md text-label-md bg-surface-card text-text-primary shadow-xs" data-sort="votes" type="button">Most Voted</button>
+<button class="sort-toggle px-3 py-1 rounded font-label-md text-label-md text-text-secondary hover:text-text-primary" data-sort="newest" type="button">Newest</button>
+</div>
+<div class="h-6 w-[1px] bg-border-subtle hidden sm:block"></div>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface hover:bg-surface-container-low text-text-secondary font-label-sm text-label-sm inline-flex items-center gap-1.5 transition-colors" id="viewToggleSkeleton" title="Toggle Preview/Skeleton" type="button">
+<span class="material-symbols-outlined text-[16px]">view_agenda</span>
+<span class="hidden sm:inline">Preview Mode</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="text-text-muted font-label-sm text-label-sm uppercase mr-1">Category</span>
+<button class="cat-pill active px-3 py-1 rounded-full font-label-sm text-label-sm bg-text-primary text-surface-card transition-all" data-category="all">All</button>
+<button class="cat-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary hover:text-text-primary transition-all" data-category="feature">Feature</button>
+<button class="cat-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary hover:text-text-primary transition-all" data-category="improvement">Improvement</button>
+<button class="cat-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary hover:text-text-primary transition-all" data-category="bug">Bug</button>
+<button class="cat-pill px-3 py-1 rounded-full font-label-sm text-label-sm bg-surface-container-low text-text-secondary hover:text-text-primary transition-all" data-category="integration">Integration</button>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="text-text-muted font-label-sm text-label-sm uppercase mr-1">Status</span>
+<button class="status-pill active px-2.5 py-1 rounded-md font-label-sm text-label-sm bg-surface text-text-primary font-semibold" data-status="all">All Statuses</button>
+<button class="status-pill px-2.5 py-1 rounded-md font-label-sm text-label-sm text-status-review-text hover:bg-status-review-bg transition-colors" data-status="review">Under Review</button>
+<button class="status-pill px-2.5 py-1 rounded-md font-label-sm text-label-sm text-status-planned-text hover:bg-status-planned-bg transition-colors" data-status="planned">Planned</button>
+<button class="status-pill px-2.5 py-1 rounded-md font-label-sm text-label-sm text-status-progress-text hover:bg-status-progress-bg transition-colors" data-status="progress">In Progress</button>
+<button class="status-pill px-2.5 py-1 rounded-md font-label-sm text-label-sm text-status-completed-text hover:bg-status-completed-bg transition-colors" data-status="completed">Completed</button>
+</div>
+</div>
+</div>
+<div class="mt-6 space-y-3" id="feedbackList">
+<article class="feedback-card bg-surface-card rounded-xl p-4 sm:p-5 transition-all duration-200 hover:shadow-md flex items-start gap-4 sm:gap-5" data-category="integration" data-status="progress">
+<button class="upvote-btn voted flex flex-col items-center justify-center w-11 h-14 rounded-lg bg-interactive-active-bg text-interactive-active-text transition-all group shrink-0" data-votes="248" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5" style="font-variation-settings: 'FILL' 1;">keyboard_arrow_up</span>
+<span class="vote-count font-mono-metric text-mono-metric font-bold">248</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm uppercase bg-status-progress-bg text-status-progress-text font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-progress-text"></span>
+              In Progress
+            </span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-integration-bg text-tag-integration-text font-medium">Integration</span>
+<span class="text-text-muted text-body-sm font-body-sm">· FF-108</span>
+</div>
+<a class="block font-headline-sm text-headline-sm text-text-primary hover:text-secondary transition-colors line-clamp-1" href="#">
+            Slack webhook notifications for deployment alerts and release digests
+          </a>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+            Allow teams to connect an incoming Slack webhook directly from Project Settings to stream automated changelog publish notifications, feature flag status updates, and incident post-mortems.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-canvas/40 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<div class="flex items-center gap-2">
+<img class="w-5 h-5 rounded-full object-cover shrink-0" data-alt="High quality professional headshot of product engineer David Vance in soft studio lighting with a neutral slate backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAycYIH2q1VRl7fcAlxRhEwGPWlKFdkcxHU-KQSxgRrHgHGSbGsOAHXAmQkw26ULO6F7dSuYKAq79ReNoNGJijSL8XkULNcMv0mBOvqVhM9uPLirRXlbaRoT1PtVxPXwBUsp1sfXI4iEQV7pYh92jOiyZ9LgqOy5wkOOAvcZs9R8W7wrXFwnf4FIXC8wvyfZPKV0adBFtDFARAqy5D-aXxH5A_wHfSOzEqKzwUt_Y"/>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">David Vance</span>
+<span class="text-text-muted font-body-sm text-body-sm">submitted 2 days ago</span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">chat_bubble</span>
+<span>32 comments</span>
+</span>
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">bookmark</span>
+<span>Follow</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+<article class="feedback-card bg-surface-card rounded-xl p-4 sm:p-5 transition-all duration-200 hover:shadow-md flex items-start gap-4 sm:gap-5" data-category="feature" data-status="planned">
+<button class="upvote-btn flex flex-col items-center justify-center w-11 h-14 rounded-lg bg-surface text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-all group shrink-0" data-votes="184" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5">keyboard_arrow_up</span>
+<span class="vote-count font-mono-metric text-mono-metric font-semibold">184</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm uppercase bg-status-planned-bg text-status-planned-text font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-planned-text"></span>
+              Planned
+            </span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-feature-bg text-tag-feature-text font-medium">Feature</span>
+<span class="text-text-muted text-body-sm font-body-sm">· FF-92</span>
+</div>
+<a class="block font-headline-sm text-headline-sm text-text-primary hover:text-secondary transition-colors line-clamp-1" href="#">
+            Custom CSS variables and theming in embedded public roadmap widget
+          </a>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+            Provide granular custom properties (--ff-bg-card, --ff-primary-accent, --ff-radius) for iframe and shadow-root embeds to guarantee 1:1 visual parity with host design systems without overrides.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-canvas/40 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<div class="flex items-center gap-2">
+<img class="w-5 h-5 rounded-full object-cover shrink-0" data-alt="Portrait photo of UI designer Elena Vance against natural daylight soft focus architectural office interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9J2YZT_trJrYuDatFpmSlifAUew1llFDrQ-ZVovWQ-nRqaEr589ZvWoPyZoSZJODsf2Pa4jZ5qcS5bma8iz2NR4o04HXlN0oV4LvnnK8v6ystuRGT80N7x-Wqw8s9kYf80rzclpU-KJ66pmRF0G7aA1z9cs60xRSenKZI4r636dELOKfKMGVO-me1clmMg4ftGWsI_swv-uiijKGqj64DZ24t23abWmVig43RM4g"/>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Elena Vance</span>
+<span class="text-text-muted font-body-sm text-body-sm">submitted 4 days ago</span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">chat_bubble</span>
+<span>19 comments</span>
+</span>
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">bookmark</span>
+<span>Follow</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+<article class="feedback-card bg-surface-card rounded-xl p-4 sm:p-5 transition-all duration-200 hover:shadow-md flex items-start gap-4 sm:gap-5" data-category="bug" data-status="review">
+<button class="upvote-btn flex flex-col items-center justify-center w-11 h-14 rounded-lg bg-surface text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-all group shrink-0" data-votes="112" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5">keyboard_arrow_up</span>
+<span class="vote-count font-mono-metric text-mono-metric font-semibold">112</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm uppercase bg-status-review-bg text-status-review-text font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-review-text"></span>
+              Under Review
+            </span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-bug-bg text-tag-bug-text font-medium">Bug</span>
+<span class="text-text-muted text-body-sm font-body-sm">· FF-77</span>
+</div>
+<a class="block font-headline-sm text-headline-sm text-text-primary hover:text-secondary transition-colors line-clamp-1" href="#">
+            Fix Mobile Safari datepicker crash on iOS 18 release candidates
+          </a>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+            Tapping the milestone target calendar picker freezes the viewport when keyboard zoom is triggered simultaneously. Steps to reproduce and Safari WebKit stack trace included in discussion.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-canvas/40 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-status-review-text text-white flex items-center justify-center font-mono-metric text-[10px] font-bold">MK</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Marcus Kim</span>
+<span class="text-text-muted font-body-sm text-body-sm">submitted 1 week ago</span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">chat_bubble</span>
+<span>27 comments</span>
+</span>
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">bookmark</span>
+<span>Follow</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+<article class="feedback-card bg-surface-card rounded-xl p-4 sm:p-5 transition-all duration-200 hover:shadow-md flex items-start gap-4 sm:gap-5" data-category="feature" data-status="completed">
+<button class="upvote-btn flex flex-col items-center justify-center w-11 h-14 rounded-lg bg-surface text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-all group shrink-0" data-votes="89" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5">keyboard_arrow_up</span>
+<span class="vote-count font-mono-metric text-mono-metric font-semibold">89</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm uppercase bg-status-completed-bg text-status-completed-text font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-completed-text"></span>
+              Completed
+            </span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-feature-bg text-tag-feature-text font-medium">Feature</span>
+<span class="text-text-muted text-body-sm font-body-sm">· FF-63</span>
+</div>
+<a class="block font-headline-sm text-headline-sm text-text-primary hover:text-secondary transition-colors line-clamp-1" href="#">
+            Two-factor authentication (TOTP) enforcement for organization workspaces
+          </a>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+            Enable workspace admins to mandate authenticator apps (Google Authenticator, 1Password) across all member accounts with backup recovery key downloads.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-canvas/40 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<div class="flex items-center gap-2">
+<img class="w-5 h-5 rounded-full object-cover shrink-0" data-alt="Portrait photo of enterprise security analyst Sarah Jenkins in minimalist tech workspace with soft natural rim light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsZUcHXm3PJGasUScHxOG6StorveWzdwKnfVRTGPINywN9S8vS_zLVGL3avawMssDoQpJDojz4FygKK0OhUbol73pRjxyCZgQqE839rWE3F-ttI74rNpU4uLiNvg54ufEAMuX3Pvn8yk9gBVH0-5chrzIonOFq_7yqZqjS3EeRgN66I57gSBAVYnGVSMKIsL8RbWktg3tEQcQxAZL0J_jlVJGQbXt-fwiM_prBgvk"/>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Sarah Jenkins</span>
+<span class="text-text-muted font-body-sm text-body-sm">shipped 3 weeks ago</span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">chat_bubble</span>
+<span>44 comments</span>
+</span>
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">bookmark</span>
+<span>Follow</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+<article class="feedback-card bg-surface-card rounded-xl p-4 sm:p-5 transition-all duration-200 hover:shadow-md flex items-start gap-4 sm:gap-5" data-category="improvement" data-status="review">
+<button class="upvote-btn flex flex-col items-center justify-center w-11 h-14 rounded-lg bg-surface text-text-secondary hover:text-text-primary hover:bg-surface-container-low transition-all group shrink-0" data-votes="64" type="button">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:-translate-y-0.5">keyboard_arrow_up</span>
+<span class="vote-count font-mono-metric text-mono-metric font-semibold">64</span>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center gap-2 mb-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded font-label-sm text-label-sm uppercase bg-status-review-bg text-status-review-text font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-status-review-text"></span>
+              Under Review
+            </span>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-improvement-bg text-tag-improvement-text font-medium">Improvement</span>
+<span class="text-text-muted text-body-sm font-body-sm">· FF-54</span>
+</div>
+<a class="block font-headline-sm text-headline-sm text-text-primary hover:text-secondary transition-colors line-clamp-1" href="#">
+            Keyboard navigation shortcuts across feedback kanban board
+          </a>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 line-clamp-2">
+            Implement 'J' / 'K' linear selection, 'Space' for upvoting, and 'C' to initiate rapid feedback creation without lifting hands off home row keys.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-canvas/40 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<div class="flex items-center gap-2">
+<div class="w-5 h-5 rounded-full bg-secondary text-white flex items-center justify-center font-mono-metric text-[10px] font-bold">AL</div>
+<span class="font-body-sm text-body-sm text-text-primary font-medium">Alexandre Laurent</span>
+<span class="text-text-muted font-body-sm text-body-sm">submitted 1 month ago</span>
+</div>
+<div class="flex items-center gap-4 text-text-secondary font-body-sm text-body-sm">
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">chat_bubble</span>
+<span>8 comments</span>
+</span>
+<span class="inline-flex items-center gap-1 hover:text-text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[16px] text-text-muted">bookmark</span>
+<span>Follow</span>
+</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div class="hidden mt-6 space-y-3" id="skeletonContainer">
+<div class="bg-surface-card rounded-xl p-5 animate-pulse flex items-start gap-4">
+<div class="w-11 h-14 rounded-lg bg-surface-container-low shrink-0"></div>
+<div class="flex-1 space-y-3">
+<div class="flex gap-2">
+<div class="w-20 h-4 bg-surface-container-low rounded"></div>
+<div class="w-16 h-4 bg-surface-container-low rounded"></div>
+</div>
+<div class="w-3/4 h-5 bg-surface-container-low rounded"></div>
+<div class="w-full h-4 bg-surface-container-low rounded"></div>
+<div class="w-1/3 h-4 bg-surface-container-low rounded pt-2"></div>
+</div>
+</div>
+<div class="bg-surface-card rounded-xl p-5 animate-pulse flex items-start gap-4">
+<div class="w-11 h-14 rounded-lg bg-surface-container-low shrink-0"></div>
+<div class="flex-1 space-y-3">
+<div class="flex gap-2">
+<div class="w-20 h-4 bg-surface-container-low rounded"></div>
+<div class="w-16 h-4 bg-surface-container-low rounded"></div>
+</div>
+<div class="w-2/3 h-5 bg-surface-container-low rounded"></div>
+<div class="w-full h-4 bg-surface-container-low rounded"></div>
+</div>
+</div>
+</div>
+<div class="hidden mt-8 py-16 bg-surface-card rounded-xl text-center px-4" id="emptyState">
+<div class="w-12 h-12 rounded-full bg-surface-container-low text-text-muted flex items-center justify-center mx-auto mb-3">
+<span class="material-symbols-outlined text-[24px]">filter_list_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary">No matching feedback found</h3>
+<p class="font-body-sm text-body-sm text-text-secondary mt-1 max-w-sm mx-auto">
+        Try adjusting your search criteria or clear your current filters to view community submissions.
+      </p>
+<button class="mt-4 px-4 py-2 rounded-lg bg-surface hover:bg-surface-container-low text-text-primary font-label-md text-label-md transition-colors" id="resetFiltersBtn" type="button">
+        Clear All Filters
+      </button>
+</div>
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 py-3">
+<span class="font-body-sm text-body-sm text-text-secondary">
+        Showing <span class="font-semibold text-text-primary">1</span> to <span class="font-semibold text-text-primary">10</span> of <span class="font-semibold text-text-primary">142</span> items
+      </span>
+<div class="flex items-center gap-1.5">
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-card text-text-secondary hover:text-text-primary hover:bg-surface-container-low font-label-md text-label-md transition-colors inline-flex items-center gap-1 disabled:opacity-40" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+<span class="hidden sm:inline">Previous</span>
+</button>
+<button class="w-8 h-8 rounded-lg bg-text-primary text-surface-card font-label-md text-label-md flex items-center justify-center" type="button">1</button>
+<button class="w-8 h-8 rounded-lg bg-surface-card hover:bg-surface-container-low text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center justify-center transition-colors" type="button">2</button>
+<button class="w-8 h-8 rounded-lg bg-surface-card hover:bg-surface-container-low text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center justify-center transition-colors" type="button">3</button>
+<span class="px-1 text-text-muted">…</span>
+<button class="w-8 h-8 rounded-lg bg-surface-card hover:bg-surface-container-low text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center justify-center transition-colors" type="button">15</button>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-card text-text-secondary hover:text-text-primary hover:bg-surface-container-low font-label-md text-label-md transition-colors inline-flex items-center gap-1" type="button">
+<span class="hidden sm:inline">Next</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4" id="feedbackModal">
+<div class="fixed inset-0 bg-slate-900/40 backdrop-blur-sm transition-opacity" id="modalBackdrop"></div>
+<div class="relative bg-surface-card rounded-xl max-w-lg w-full p-6 shadow-2xl z-10 transition-all transform">
+<div class="flex items-center justify-between pb-3 mb-4">
+<div>
+<h2 class="font-headline-md text-headline-md text-text-primary">Submit New Feedback</h2>
+<p class="font-body-sm text-body-sm text-text-secondary">Have an idea or spotted a bug? Let us know.</p>
+</div>
+<button class="p-1 rounded-lg text-text-muted hover:text-text-primary hover:bg-surface transition-colors" id="closeModalBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="space-y-4" id="submissionForm">
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1">Title</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:bg-surface-card focus:outline-none" placeholder="Short, descriptive summary..." required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1">Category</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:outline-none">
+<option value="feature">Feature Request</option>
+<option value="improvement">Improvement</option>
+<option value="bug">Bug Report</option>
+<option value="integration">Integration</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1">Impact / Urgency</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:outline-none">
+<option>Low / Nice-to-have</option>
+<option selected="">Medium / High Value</option>
+<option>Critical / Blocking</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1">Description</label>
+<textarea class="w-full p-3 rounded-lg bg-surface text-text-primary font-body-md text-body-md focus:bg-surface-card focus:outline-none resize-none" placeholder="Explain the problem you're trying to solve and potential solutions..." required="" rows="4"></textarea>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3">
+<button class="px-4 py-2 rounded-lg bg-surface hover:bg-surface-container-low text-text-secondary font-label-md text-label-md transition-colors" id="cancelModalBtn" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:bg-secondary/90 font-label-md text-label-md transition-colors shadow-sm" type="submit">
+            Publish Proposal
+          </button>
+</div>
+</form>
+</div>
+</div>
+<script>
+    (function () {
+      const upvoteBtns = document.querySelectorAll('.upvote-btn');
+      upvoteBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const countSpan = btn.querySelector('.vote-count');
+          const iconSpan = btn.querySelector('.material-symbols-outlined');
+          let count = parseInt(btn.getAttribute('data-votes'), 10);
+          const isVoted = btn.classList.contains('voted');
+
+          if (isVoted) {
+            btn.classList.remove('voted', 'bg-interactive-active-bg', 'text-interactive-active-text');
+            btn.classList.add('bg-surface', 'text-text-secondary');
+            iconSpan.style.fontVariationSettings = "'FILL' 0";
+            count -= 1;
+          } else {
+            btn.classList.add('voted', 'bg-interactive-active-bg', 'text-interactive-active-text');
+            btn.classList.remove('bg-surface', 'text-text-secondary');
+            iconSpan.style.fontVariationSettings = "'FILL' 1";
+            count += 1;
+          }
+          btn.setAttribute('data-votes', count);
+          countSpan.textContent = count;
+        });
+      });
+
+      let currentCat = 'all';
+      let currentStatus = 'all';
+      const searchInput = document.getElementById('feedbackSearch');
+      const catPills = document.querySelectorAll('.cat-pill');
+      const statusPills = document.querySelectorAll('.status-pill');
+      const cards = document.querySelectorAll('.feedback-card');
+      const emptyState = document.getElementById('emptyState');
+      const feedbackList = document.getElementById('feedbackList');
+
+      function filterItems() {
+        const query = searchInput.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          const cardStatus = card.getAttribute('data-status');
+          const text = card.textContent.toLowerCase();
+
+          const matchesCat = (currentCat === 'all' || cardCat === currentCat);
+          const matchesStatus = (currentStatus === 'all' || cardStatus === currentStatus);
+          const matchesSearch = (!query || text.includes(query));
+
+          if (matchesCat && matchesStatus && matchesSearch) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+        } else {
+          emptyState.classList.add('hidden');
+        }
+      }
+
+      catPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          catPills.forEach(p => {
+            p.classList.remove('active', 'bg-text-primary', 'text-surface-card');
+            p.classList.add('bg-surface-container-low', 'text-text-secondary');
+          });
+          pill.classList.add('active', 'bg-text-primary', 'text-surface-card');
+          pill.classList.remove('bg-surface-container-low', 'text-text-secondary');
+          currentCat = pill.getAttribute('data-category');
+          filterItems();
+        });
+      });
+
+      statusPills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          statusPills.forEach(p => p.classList.remove('active', 'bg-surface', 'font-semibold'));
+          pill.classList.add('active', 'bg-surface', 'font-semibold');
+          currentStatus = pill.getAttribute('data-status');
+          filterItems();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterItems);
+      }
+
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          if (searchInput) searchInput.value = '';
+          currentCat = 'all';
+          currentStatus = 'all';
+          catPills[0]?.click();
+          statusPills[0]?.click();
+        });
+      }
+
+      const sortButtons = document.querySelectorAll('.sort-toggle');
+      sortButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          sortButtons.forEach(b => {
+            b.classList.remove('bg-surface-card', 'text-text-primary', 'shadow-xs');
+            b.classList.add('text-text-secondary');
+          });
+          btn.classList.add('bg-surface-card', 'text-text-primary', 'shadow-xs');
+          btn.classList.remove('text-text-secondary');
+
+          const sortType = btn.getAttribute('data-sort');
+          const cardsArray = Array.from(cards);
+          if (sortType === 'votes') {
+            cardsArray.sort((a, b) => {
+              const va = parseInt(a.querySelector('.upvote-btn').getAttribute('data-votes'), 10);
+              const vb = parseInt(b.querySelector('.upvote-btn').getAttribute('data-votes'), 10);
+              return vb - va;
+            });
+          } else {
+            cardsArray.reverse();
+          }
+          cardsArray.forEach(card => feedbackList.appendChild(card));
+        });
+      });
+
+      const skeletonToggle = document.getElementById('viewToggleSkeleton');
+      const skeletonContainer = document.getElementById('skeletonContainer');
+      let skeletonActive = false;
+
+      if (skeletonToggle && skeletonContainer) {
+        skeletonToggle.addEventListener('click', () => {
+          skeletonActive = !skeletonActive;
+          if (skeletonActive) {
+            feedbackList.classList.add('hidden');
+            emptyState.classList.add('hidden');
+            skeletonContainer.classList.remove('hidden');
+            skeletonToggle.classList.add('bg-interactive-active-bg', 'text-interactive-active-text');
+          } else {
+            skeletonContainer.classList.add('hidden');
+            feedbackList.classList.remove('hidden');
+            skeletonToggle.classList.remove('bg-interactive-active-bg', 'text-interactive-active-text');
+            filterItems();
+          }
+        });
+      }
+
+      const modal = document.getElementById('feedbackModal');
+      const openBtn = document.getElementById('openModalBtn');
+      const closeBtn = document.getElementById('closeModalBtn');
+      const cancelBtn = document.getElementById('cancelModalBtn');
+      const backdrop = document.getElementById('modalBackdrop');
+      const form = document.getElementById('submissionForm');
+
+      function openModal() {
+        modal.classList.remove('hidden');
+      }
+
+      function closeModal() {
+        modal.classList.add('hidden');
+      }
+
+      if (openBtn) openBtn.addEventListener('click', openModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+      if (backdrop) backdrop.addEventListener('click', closeModal);
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          closeModal();
+          form.reset();
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+          e.preventDefault();
+          if (searchInput) searchInput.focus();
+        }
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</div></main><footer class="w-full border-t border-border-subtle bg-surface-card py-8 mt-auto"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[14px]">bolt</span></div><span class="font-label-md text-label-md font-semibold text-text-primary">FeedbackFlow</span><span class="text-body-sm font-body-sm text-text-muted ml-2">© 2025 FeedbackFlow Inc. All rights reserved.</span></div><div class="flex items-center gap-6 text-body-sm font-body-sm text-text-secondary"><a class="hover:text-text-primary transition-colors" data-path="changelog" href="#">Changelog</a><a class="hover:text-text-primary transition-colors" data-path="documentation" href="#">Docs</a><a class="hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-text-primary transition-colors" data-path="status" href="#">Status</a></div></div></footer></body></html>

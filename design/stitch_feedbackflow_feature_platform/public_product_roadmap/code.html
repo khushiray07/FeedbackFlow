@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#eaf1ff",
+          "status-review-text": "#6D28D9",
+          "on-surface-variant": "#45464d",
+          "on-tertiary": "#ffffff",
+          "status-planned-text": "#B45309",
+          "surface-container-lowest": "#ffffff",
+          "status-review-border": "#DDD6FE",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tag-integration-text": "#7E22CE",
+          "interactive-active-bg": "#EEF2FF",
+          "surface-tint": "#565e74",
+          "status-progress-border": "#C7D2FE",
+          "secondary": "#4b41e1",
+          "tertiary-container": "#271901",
+          "interactive-active-text": "#4338CA",
+          "tag-feature-bg": "#F1F5F9",
+          "outline-variant": "#c6c6cd",
+          "status-review-bg": "#F5F3FF",
+          "outline": "#76777d",
+          "on-tertiary-fixed": "#271901",
+          "status-planned-border": "#FDE68A",
+          "error": "#ba1a1a",
+          "border-subtle": "#E2E8F0",
+          "tag-integration-bg": "#FAF5FF",
+          "tertiary-fixed": "#fcdeb5",
+          "on-primary-container": "#7c839b",
+          "status-completed-border": "#A7F3D0",
+          "error-container": "#ffdad6",
+          "inverse-surface": "#213145",
+          "surface": "#f8f9ff",
+          "on-secondary-fixed": "#0f0069",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d3e4fe",
+          "tag-feature-text": "#334155",
+          "on-primary-fixed-variant": "#3f465c",
+          "status-progress-text": "#4338CA",
+          "surface-container-low": "#eff4ff",
+          "on-error-container": "#93000a",
+          "tag-improvement-bg": "#F0FDF4",
+          "on-secondary-fixed-variant": "#3323cc",
+          "interactive-active-border": "#6366F1",
+          "surface-container": "#e5eeff",
+          "tag-improvement-text": "#15803D",
+          "tertiary-fixed-dim": "#dec29a",
+          "border-strong": "#CBD5E1",
+          "border-focus": "#0F172A",
+          "inverse-primary": "#bec6e0",
+          "tag-bug-text": "#B91C1C",
+          "on-primary": "#ffffff",
+          "text-secondary": "#475569",
+          "secondary-fixed-dim": "#c3c0ff",
+          "surface-card": "#FFFFFF",
+          "text-muted": "#94A3B8",
+          "surface-elevated": "#FFFFFF",
+          "primary-container": "#131b2e",
+          "surface-variant": "#d3e4fe",
+          "surface-bright": "#f8f9ff",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed-variant": "#574425",
+          "text-primary": "#0F172A",
+          "primary": "#000000",
+          "status-progress-bg": "#EEF2FF",
+          "status-completed-bg": "#ECFDF5",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "tag-bug-bg": "#FEF2F2",
+          "tertiary": "#000000",
+          "on-secondary-container": "#fffbff",
+          "on-tertiary-container": "#98805d",
+          "surface-canvas": "#F8FAFC",
+          "background": "#f8f9ff",
+          "primary-fixed": "#dae2fd",
+          "secondary-fixed": "#e2dfff",
+          "surface-container-high": "#dce9ff",
+          "status-completed-text": "#047857",
+          "status-planned-bg": "#FFFBEB",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#645efb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "margin": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-md": "0.75rem",
+          "margin-lg": "2rem",
+          "space-xs": "0.25rem",
+          "gutter-lg": "1.5rem",
+          "margin-md": "1.5rem",
+          "space-lg": "1.25rem"
+        },
+        "fontFamily": {
+          "headline-xl-mobile": ["Geist"],
+          "label-sm": ["Geist"],
+          "headline-md": ["Geist"],
+          "body-sm": ["Geist"],
+          "headline-xl": ["Geist"],
+          "body-md": ["Geist"],
+          "mono-metric": ["JetBrains Mono"],
+          "headline-lg": ["Geist"],
+          "label-md": ["Geist"],
+          "headline-sm": ["Geist"],
+          "body-lg": ["Geist"]
+        },
+        "fontSize": {
+          "headline-xl-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "mono-metric": ["12px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-card/95 backdrop-blur-md border-b border-border-subtle"><div class="h-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2 text-text-primary no-underline" data-path="feedback-board" href="#"><div class="w-6 h-6 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[16px]">bolt</span></div><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary">FeedbackFlow</span></a><nav class="hidden md:flex items-center gap-6 h-14" data-active-classes="text-text-primary font-semibold border-b-2 border-text-primary"><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="feedback-board" href="#">Feedback Board</a><a aria-current="page" class="h-full inline-flex items-center px-1 transition-colors text-text-primary font-semibold border-b-2 border-text-primary" data-path="public-roadmap" href="#">Public Roadmap</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-dashboard" href="#">Admin Dashboard</a></nav></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-canvas text-text-secondary hover:border-border-strong text-body-sm font-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-text-muted">search</span><span>Search feedback...</span><kbd class="hidden lg:inline-block px-1.5 py-0.5 rounded bg-surface border border-border-subtle font-mono-metric text-mono-metric text-text-muted">⌘K</kbd></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Submit Feedback</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-14 bg-surface"><div class="flex flex-col w-full">
+<!-- Top Ambient Glow Bar -->
+<div class="w-full h-1 bg-gradient-to-r from-status-review-text via-secondary to-status-completed-text opacity-80"></div>
+<!-- Roadmap Core Canvas -->
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+<!-- Header Block: Precision Telemetry & Primary Controls -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container text-text-secondary text-label-sm font-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-status-completed-text animate-pulse"></span>
+<span class="font-mono-metric text-mono-metric tracking-tight">LIVE UPDATES</span>
+<span class="text-text-muted">/</span>
+<span>48 Shipped this year • 94% Community Voted</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">
+          Public Product Roadmap
+        </h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-2xl">
+          Track what the engineering team is researching, planning, and shipping in real-time. Direct feedback loops powering our weekly deployment cadences.
+        </p>
+</div>
+<!-- Action Bar -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Live Velocity Mini Sparkline Pill -->
+<div class="hidden sm:flex items-center gap-3 px-3 py-2 rounded bg-surface-card shadow-sm">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted">VELOCITY</span>
+<span class="font-mono-metric text-mono-metric text-text-primary">+18.4% / mo</span>
+</div>
+<!-- Micro Inline SVG Sparkline -->
+<svg class="w-16 h-7 text-status-completed-text" fill="none" viewbox="0 0 64 28">
+<path d="M2 24 L14 19 L26 21 L38 12 L50 14 L62 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M2 24 L14 19 L26 21 L38 12 L50 14 L62 4 V 28 H 2 Z" fill="currentColor" fill-opacity="0.12"></path>
+</svg>
+</div>
+<button class="inline-flex items-center gap-2 h-9 px-4 rounded bg-primary text-on-primary font-label-md text-label-md font-medium hover:bg-slate-800 transition-colors shadow-sm" id="open-propose-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Propose Idea</span>
+</button>
+</div>
+</section>
+<!-- Filter & View Toolbar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 p-2 rounded bg-surface-card shadow-sm">
+<div class="flex flex-wrap items-center gap-1.5">
+<span class="text-label-sm font-label-sm text-text-muted px-2 uppercase tracking-wider">Filter:</span>
+<button class="category-filter-btn px-2.5 py-1 rounded bg-surface-container font-label-md text-label-md text-text-primary transition-colors" data-category="all" type="button">
+          All Categories
+        </button>
+<button class="category-filter-btn px-2.5 py-1 rounded hover:bg-surface-container font-label-md text-label-md text-text-secondary transition-colors" data-category="Feature" type="button">
+          Features (5)
+        </button>
+<button class="category-filter-btn px-2.5 py-1 rounded hover:bg-surface-container font-label-md text-label-md text-text-secondary transition-colors" data-category="Integration" type="button">
+          Integrations (4)
+        </button>
+<button class="category-filter-btn px-2.5 py-1 rounded hover:bg-surface-container font-label-md text-label-md text-text-secondary transition-colors" data-category="Improvement" type="button">
+          Improvements (2)
+        </button>
+<button class="category-filter-btn px-2.5 py-1 rounded hover:bg-surface-container font-label-md text-label-md text-text-secondary transition-colors" data-category="Bug" type="button">
+          Bugs (1)
+        </button>
+</div>
+<div class="flex items-center gap-2 self-stretch md:self-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-2.5 text-[18px] text-text-muted">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 rounded bg-surface font-body-sm text-body-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-1 focus:ring-border-focus" id="roadmap-search" placeholder="Filter lane cards..." type="text"/>
+</div>
+<div class="hidden xl:flex items-center gap-1 text-label-sm font-label-sm text-text-muted px-2">
+<span class="material-symbols-outlined text-[16px]">touch_app</span>
+<span>Click pill to upvote</span>
+</div>
+</div>
+</div>
+<!-- Mobile Segment Control (Visible < 768px) -->
+<div class="flex md:hidden w-full p-1 rounded bg-surface-card shadow-sm gap-1 overflow-x-auto text-label-sm font-label-sm">
+<button class="mobile-tab-btn flex-1 py-1.5 px-2 rounded bg-surface-container text-text-primary font-semibold whitespace-nowrap text-center" data-target="lane-review" type="button">
+        Review (14)
+      </button>
+<button class="mobile-tab-btn flex-1 py-1.5 px-2 rounded text-text-secondary whitespace-nowrap text-center" data-target="lane-planned" type="button">
+        Planned (9)
+      </button>
+<button class="mobile-tab-btn flex-1 py-1.5 px-2 rounded text-text-secondary whitespace-nowrap text-center" data-target="lane-progress" type="button">
+        Progress (5)
+      </button>
+<button class="mobile-tab-btn flex-1 py-1.5 px-2 rounded text-text-secondary whitespace-nowrap text-center" data-target="lane-completed" type="button">
+        Done (28)
+      </button>
+</div>
+<!-- Kanban Grid (4 Distinct Engineered Lanes) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-start">
+<!-- ================= LANE 1: UNDER REVIEW ================= -->
+<div class="kanban-lane flex flex-col rounded bg-surface-container-low p-3 shadow-sm min-h-[520px]" id="lane-review">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-review-text"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Under Review</span>
+<span class="px-1.5 py-0.5 rounded bg-status-review-bg text-status-review-text font-mono-metric text-mono-metric">14</span>
+</div>
+<button class="text-text-muted hover:text-text-primary transition-colors" title="Lane Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted pb-3 mb-1">Ideas being evaluated by core product</p>
+<!-- Column Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 1.1 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Feature">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-feature-bg text-tag-feature-text font-label-sm text-label-sm">
+                Feature
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="94" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">94</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              AI-Powered Duplicate Detection
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Automatically flag semantically duplicate feedback posts on submission to prevent signal fragmentation.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 18 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-892</span>
+</div>
+</article>
+<!-- Card 1.2 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Integration">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-integration-bg text-tag-integration-text font-label-sm text-label-sm">
+                Integration
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="68" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">68</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Linear 2-Way Sync
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Real-time sync to mirror roadmap progression directly from internal Linear engineering projects.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 7 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-741</span>
+</div>
+</article>
+<!-- Card 1.3 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Improvement">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-improvement-bg text-tag-improvement-text font-label-sm text-label-sm">
+                Improvement
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="112" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">112</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Custom Domain CNAME with SSL
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Allow custom domain mapping (feedback.yourdomain.com) with automated Let's Encrypt certificates.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 31 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-603</span>
+</div>
+</article>
+</div>
+</div>
+<!-- ================= LANE 2: PLANNED ================= -->
+<div class="kanban-lane flex flex-col rounded bg-surface-container-low p-3 shadow-sm min-h-[520px]" id="lane-planned">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-planned-text"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Planned</span>
+<span class="px-1.5 py-0.5 rounded bg-status-planned-bg text-status-planned-text font-mono-metric text-mono-metric">9</span>
+</div>
+<button class="text-text-muted hover:text-text-primary transition-colors" title="Lane Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted pb-3 mb-1">Committed to engineering sprints</p>
+<!-- Column Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 2.1 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Feature">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-feature-bg text-tag-feature-text font-label-sm text-label-sm">
+                Feature
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-interactive-active-bg text-interactive-active-text font-mono-metric text-mono-metric" data-count="156" data-voted="true" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="count">156</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Export Data to CSV / JSON
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Full raw export suite for analytics, customer vote trails, and external business intelligence warehousing.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 42 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-529</span>
+</div>
+</article>
+<!-- Card 2.2 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Feature">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-feature-bg text-tag-feature-text font-label-sm text-label-sm">
+                Feature
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="88" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">88</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Two-Factor Authentication (2FA)
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Authenticator app TOTP support with printable recovery keys for workspace organization security.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 15 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-418</span>
+</div>
+</article>
+<!-- Card 2.3 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Integration">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-integration-bg text-tag-integration-text font-label-sm text-label-sm">
+                Integration
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="134" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">134</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Zapier Automation Triggers
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Trigger automated workflows on upvotes, stage changes, or critical customer feedback tag events.
+            </p>
+<div class="flex items-center justify-between pt-2 text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">chat_bubble</span> 22 comments</span>
+<span class="font-mono-metric text-mono-metric">ID-339</span>
+</div>
+</article>
+</div>
+</div>
+<!-- ================= LANE 3: IN PROGRESS ================= -->
+<div class="kanban-lane flex flex-col rounded bg-surface-container-low p-3 shadow-sm min-h-[520px]" id="lane-progress">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-progress-text animate-pulse"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">In Progress</span>
+<span class="px-1.5 py-0.5 rounded bg-status-progress-bg text-status-progress-text font-mono-metric text-mono-metric">5</span>
+</div>
+<button class="text-text-muted hover:text-text-primary transition-colors" title="Lane Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted pb-3 mb-1">Actively being built in current sprint</p>
+<!-- Column Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 3.1 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Feature">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-feature-bg text-tag-feature-text font-label-sm text-label-sm">
+                Feature
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-interactive-active-bg text-interactive-active-text font-mono-metric text-mono-metric" data-count="312" data-voted="true" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="count">312</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Dark Mode Theme Support
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-2">
+              System-level dark mode toggle with OLED contrast and customized code syntax highlights.
+            </p>
+<!-- Progress Sub-indicator -->
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-4/5"></div>
+</div>
+<div class="flex items-center justify-between text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1 text-secondary font-medium">Sprint 24.3 (80%)</span>
+<span class="font-mono-metric text-mono-metric">ID-291</span>
+</div>
+</article>
+<!-- Card 3.2 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Integration">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-integration-bg text-tag-integration-text font-label-sm text-label-sm">
+                Integration
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="204" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">204</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              GitHub Pull Request Integration
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-2">
+              Link GitHub commits and PRs to cards; auto-progress status to In Progress on branch push.
+            </p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-1/2"></div>
+</div>
+<div class="flex items-center justify-between text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1 text-secondary font-medium">Sprint 24.3 (50%)</span>
+<span class="font-mono-metric text-mono-metric">ID-304</span>
+</div>
+</article>
+<!-- Card 3.3 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Bug">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-bug-bg text-tag-bug-text font-label-sm text-label-sm">
+                Bug
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="47" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">47</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Fix OAuth Token Refresh Race Condition
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-2">
+              Resolve background token refresh 401 errors during multi-tab simultaneous sessions.
+            </p>
+<div class="w-full bg-surface-container rounded-full h-1.5 mb-2 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-11/12"></div>
+</div>
+<div class="flex items-center justify-between text-text-muted text-label-sm font-label-sm">
+<span class="flex items-center gap-1 text-secondary font-medium">Hotfix in QA</span>
+<span class="font-mono-metric text-mono-metric">BUG-108</span>
+</div>
+</article>
+</div>
+</div>
+<!-- ================= LANE 4: COMPLETED ================= -->
+<div class="kanban-lane flex flex-col rounded bg-surface-container-low p-3 shadow-sm min-h-[520px]" id="lane-completed">
+<!-- Lane Header -->
+<div class="flex items-center justify-between pb-2 mb-3">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-status-completed-text"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Completed</span>
+<span class="px-1.5 py-0.5 rounded bg-status-completed-bg text-status-completed-text font-mono-metric text-mono-metric">28</span>
+</div>
+<button class="text-text-muted hover:text-text-primary transition-colors" title="Lane Options" type="button">
+<span class="material-symbols-outlined text-[18px]">more_horiz</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted pb-3 mb-1">Released and running in production</p>
+<!-- Column Cards Container -->
+<div class="flex flex-col gap-3">
+<!-- Card 4.1 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Improvement">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-improvement-bg text-tag-improvement-text font-label-sm text-label-sm">
+                Improvement
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="284" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">284</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Markdown Support in Comments
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Format feedback comments with syntax-highlighted code blocks, tables, and task checklists.
+            </p>
+<div class="flex items-center justify-between pt-2 text-status-completed-text text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span> Shipped v2.4.0</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">ID-198</span>
+</div>
+</article>
+<!-- Card 4.2 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Integration">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-integration-bg text-tag-integration-text font-label-sm text-label-sm">
+                Integration
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-surface font-mono-metric text-mono-metric text-text-secondary hover:bg-interactive-active-bg hover:text-interactive-active-text transition-colors" data-count="179" data-voted="false" type="button">
+<span class="material-symbols-outlined text-[16px]">stat_1</span>
+<span class="count">179</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Slack Channel Webhook Notifications
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Broadcast newly submitted high-priority items directly into dedicated triage channels.
+            </p>
+<div class="flex items-center justify-between pt-2 text-status-completed-text text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span> Shipped v2.3.8</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">ID-182</span>
+</div>
+</article>
+<!-- Card 4.3 -->
+<article class="roadmap-card group flex flex-col p-3.5 rounded bg-surface-card hover:shadow-md transition-all duration-150 cursor-pointer" data-category="Feature">
+<div class="flex items-start justify-between gap-3 mb-2">
+<span class="inline-flex items-center px-1.5 py-0.5 rounded bg-tag-feature-bg text-tag-feature-text font-label-sm text-label-sm">
+                Feature
+              </span>
+<button class="upvote-btn flex items-center gap-1.5 px-2 py-1 rounded bg-interactive-active-bg text-interactive-active-text font-mono-metric text-mono-metric" data-count="221" data-voted="true" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">thumb_up</span>
+<span class="count">221</span>
+</button>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-text-primary group-hover:text-secondary transition-colors mb-1.5">
+              Single Sign-On (Google & GitHub)
+            </h3>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mb-3">
+              Seamless OAuth authentication enabling one-click enterprise feedback board access.
+            </p>
+<div class="flex items-center justify-between pt-2 text-status-completed-text text-label-sm font-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">check_circle</span> Shipped v2.3.0</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">ID-105</span>
+</div>
+</article>
+</div>
+</div>
+</div>
+<!-- Engineering Shipped Highlights Mosaic (Visual Depth & Richness) -->
+<section class="mt-12 pt-8">
+<div class="flex items-center justify-between mb-4">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Production Releases</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Recently Deployed to Cloud</h2>
+</div>
+<span class="font-mono-metric text-mono-metric text-text-muted">Q1 2025 HIGHLIGHTS</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<div class="p-4 rounded bg-surface-card shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-status-completed-text"></span>
+<span class="font-label-sm text-label-sm text-status-completed-text font-semibold">DEPLOYED JAN 18</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-1">Global Edge API Response Caching</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">Reduced roadmap board load times by 68% for APAC and EMEA customer teams via Cloudflare Workers routing.</p>
+</div>
+<div class="mt-4 flex items-center justify-between text-mono-metric font-mono-metric text-text-muted text-xs">
+<span>Latency < 24ms</span>
+<span>v2.4.2</span>
+</div>
+</div>
+<div class="p-4 rounded bg-surface-card shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-status-completed-text"></span>
+<span class="font-label-sm text-label-sm text-status-completed-text font-semibold">DEPLOYED JAN 09</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-1">Audit Trail & Security Logs</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">SOC2 compliant exportable log records of all status shifts, comment deletions, and moderator actions.</p>
+</div>
+<div class="mt-4 flex items-center justify-between text-mono-metric font-mono-metric text-text-muted text-xs">
+<span>Enterprise Suite</span>
+<span>v2.4.1</span>
+</div>
+</div>
+<div class="p-4 rounded bg-surface-card shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-status-completed-text"></span>
+<span class="font-label-sm text-label-sm text-status-completed-text font-semibold">DEPLOYED DEC 28</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary mb-1">Realtime Upvote WebSockets</h4>
+<p class="font-body-sm text-body-sm text-text-secondary">Replaced 30-second polling intervals with bidirectional streaming sockets to prevent ghost votes.</p>
+</div>
+<div class="mt-4 flex items-center justify-between text-mono-metric font-mono-metric text-text-muted text-xs">
+<span>Zero Dropouts</span>
+<span>v2.4.0</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Propose Idea Dialog Modal -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm" id="propose-modal">
+<div class="w-full max-w-lg bg-surface-card rounded shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+<div class="p-5 flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-text-primary">Propose a Roadmap Idea</h3>
+<p class="font-body-sm text-body-sm text-text-muted">Your suggestion enters the Under Review lane for community evaluation.</p>
+</div>
+<button class="text-text-muted hover:text-text-primary transition-colors" id="close-propose-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="p-5 space-y-4" id="propose-form">
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5" for="idea-title">Idea Title</label>
+<input class="w-full px-3 py-2 rounded bg-surface font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-1 focus:ring-border-focus" id="idea-title" placeholder="e.g. Export roadmap to Figma canvas" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5" for="idea-category">Category</label>
+<select class="w-full px-3 py-2 rounded bg-surface font-body-md text-body-md text-text-primary focus:outline-none focus:ring-1 focus:ring-border-focus" id="idea-category">
+<option value="Feature">Feature</option>
+<option value="Integration">Integration</option>
+<option value="Improvement">Improvement</option>
+<option value="Bug">Bug Report</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5" for="idea-priority">Target Lane</label>
+<input class="w-full px-3 py-2 rounded bg-surface-container font-body-md text-body-md text-text-secondary cursor-not-allowed" disabled="" id="idea-priority" type="text" value="Under Review"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-primary mb-1.5" for="idea-desc">Use Case & Context</label>
+<textarea class="w-full px-3 py-2 rounded bg-surface font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:outline-none focus:ring-1 focus:ring-border-focus" id="idea-desc" placeholder="Describe the workflow problem and desired capability..." required="" rows="3"></textarea>
+</div>
+<div class="pt-3 flex items-center justify-end gap-2.5">
+<button class="px-3.5 py-1.5 rounded font-label-md text-label-md text-text-secondary hover:bg-surface-container transition-colors" id="cancel-propose-btn" type="button">
+            Cancel
+          </button>
+<button class="px-4 py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md font-medium hover:bg-slate-800 transition-colors shadow-sm" type="submit">
+            Submit Proposal
+          </button>
+</div>
+</form>
+</div>
+</div>
+<!-- Interactive Logic -->
+<script>
+    // Upvote Toggle Micro-interaction
+    document.querySelectorAll('.upvote-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isVoted = btn.getAttribute('data-voted') === 'true';
+        let count = parseInt(btn.getAttribute('data-count'), 10);
+        const countSpan = btn.querySelector('.count');
+        const iconSpan = btn.querySelector('.material-symbols-outlined');
+
+        if (isVoted) {
+          count -= 1;
+          btn.setAttribute('data-voted', 'false');
+          btn.classList.remove('bg-interactive-active-bg', 'text-interactive-active-text');
+          btn.classList.add('bg-surface', 'text-text-secondary');
+          iconSpan.textContent = 'stat_1';
+          iconSpan.style.fontVariationSettings = "'FILL' 0";
+        } else {
+          count += 1;
+          btn.setAttribute('data-voted', 'true');
+          btn.classList.remove('bg-surface', 'text-text-secondary');
+          btn.classList.add('bg-interactive-active-bg', 'text-interactive-active-text');
+          iconSpan.textContent = 'thumb_up';
+          iconSpan.style.fontVariationSettings = "'FILL' 1";
+        }
+        btn.setAttribute('data-count', count);
+        countSpan.textContent = count;
+      });
+    });
+
+    // Category Filter Logic
+    const categoryBtns = document.querySelectorAll('.category-filter-btn');
+    const cards = document.querySelectorAll('.roadmap-card');
+    const searchInput = document.getElementById('roadmap-search');
+
+    function filterCards() {
+      const activeBtn = document.querySelector('.category-filter-btn.bg-surface-container');
+      const selectedCat = activeBtn ? activeBtn.getAttribute('data-category') : 'all';
+      const query = searchInput.value.toLowerCase().trim();
+
+      cards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        const cardText = card.innerText.toLowerCase();
+
+        const matchesCategory = selectedCat === 'all' || cardCat === selectedCat;
+        const matchesQuery = query === '' || cardText.includes(query);
+
+        if (matchesCategory && matchesQuery) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        categoryBtns.forEach(b => {
+          b.classList.remove('bg-surface-container', 'text-text-primary');
+          b.classList.add('text-text-secondary');
+        });
+        btn.classList.add('bg-surface-container', 'text-text-primary');
+        btn.classList.remove('text-text-secondary');
+        filterCards();
+      });
+    });
+
+    searchInput.addEventListener('input', filterCards);
+
+    // Mobile Tabs Switching
+    const mobileTabs = document.querySelectorAll('.mobile-tab-btn');
+    const lanes = document.querySelectorAll('.kanban-lane');
+
+    function applyMobileResponsiveView() {
+      if (window.innerWidth < 768) {
+        lanes.forEach((l, idx) => {
+          if (idx !== 0) l.classList.add('hidden');
+          else l.classList.remove('hidden');
+        });
+      } else {
+        lanes.forEach(l => l.classList.remove('hidden'));
+      }
+    }
+    applyMobileResponsiveView();
+    window.addEventListener('resize', applyMobileResponsiveView);
+
+    mobileTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        mobileTabs.forEach(t => {
+          t.classList.remove('bg-surface-container', 'text-text-primary', 'font-semibold');
+          t.classList.add('text-text-secondary');
+        });
+        tab.classList.add('bg-surface-container', 'text-text-primary', 'font-semibold');
+        tab.classList.remove('text-text-secondary');
+
+        const targetId = tab.getAttribute('data-target');
+        lanes.forEach(lane => {
+          if (lane.id === targetId) {
+            lane.classList.remove('hidden');
+          } else {
+            lane.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Propose Modal Controls
+    const modal = document.getElementById('propose-modal');
+    const openBtn = document.getElementById('open-propose-modal');
+    const closeBtn = document.getElementById('close-propose-modal');
+    const cancelBtn = document.getElementById('cancel-propose-btn');
+    const proposeForm = document.getElementById('propose-form');
+
+    function toggleModal(show) {
+      if (show) modal.classList.remove('hidden');
+      else modal.classList.add('hidden');
+    }
+
+    openBtn.addEventListener('click', () => toggleModal(true));
+    closeBtn.addEventListener('click', () => toggleModal(false));
+    cancelBtn.addEventListener('click', () => toggleModal(false));
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) toggleModal(false);
+    });
+
+    proposeForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      toggleModal(false);
+      proposeForm.reset();
+    });
+  </script>
+</div></main><footer class="w-full border-t border-border-subtle bg-surface-card py-8 mt-auto"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[14px]">bolt</span></div><span class="font-label-md text-label-md font-semibold text-text-primary">FeedbackFlow</span><span class="text-body-sm font-body-sm text-text-muted ml-2">© 2025 FeedbackFlow Inc. All rights reserved.</span></div><div class="flex items-center gap-6 text-body-sm font-body-sm text-text-secondary"><a class="hover:text-text-primary transition-colors" data-path="changelog" href="#">Changelog</a><a class="hover:text-text-primary transition-colors" data-path="documentation" href="#">Docs</a><a class="hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-text-primary transition-colors" data-path="status" href="#">Status</a></div></div></footer></body></html>

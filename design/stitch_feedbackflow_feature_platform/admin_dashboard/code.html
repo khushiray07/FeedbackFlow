@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#eaf1ff",
+          "status-review-text": "#6D28D9",
+          "on-surface-variant": "#45464d",
+          "on-tertiary": "#ffffff",
+          "status-planned-text": "#B45309",
+          "surface-container-lowest": "#ffffff",
+          "status-review-border": "#DDD6FE",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tag-integration-text": "#7E22CE",
+          "interactive-active-bg": "#EEF2FF",
+          "surface-tint": "#565e74",
+          "status-progress-border": "#C7D2FE",
+          "secondary": "#4b41e1",
+          "tertiary-container": "#271901",
+          "interactive-active-text": "#4338CA",
+          "tag-feature-bg": "#F1F5F9",
+          "outline-variant": "#c6c6cd",
+          "status-review-bg": "#F5F3FF",
+          "outline": "#76777d",
+          "on-tertiary-fixed": "#271901",
+          "status-planned-border": "#FDE68A",
+          "error": "#ba1a1a",
+          "border-subtle": "#E2E8F0",
+          "tag-integration-bg": "#FAF5FF",
+          "tertiary-fixed": "#fcdeb5",
+          "on-primary-container": "#7c839b",
+          "status-completed-border": "#A7F3D0",
+          "error-container": "#ffdad6",
+          "inverse-surface": "#213145",
+          "surface": "#f8f9ff",
+          "on-secondary-fixed": "#0f0069",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d3e4fe",
+          "tag-feature-text": "#334155",
+          "on-primary-fixed-variant": "#3f465c",
+          "status-progress-text": "#4338CA",
+          "surface-container-low": "#eff4ff",
+          "on-error-container": "#93000a",
+          "tag-improvement-bg": "#F0FDF4",
+          "on-secondary-fixed-variant": "#3323cc",
+          "interactive-active-border": "#6366F1",
+          "surface-container": "#e5eeff",
+          "tag-improvement-text": "#15803D",
+          "tertiary-fixed-dim": "#dec29a",
+          "border-strong": "#CBD5E1",
+          "border-focus": "#0F172A",
+          "inverse-primary": "#bec6e0",
+          "tag-bug-text": "#B91C1C",
+          "on-primary": "#ffffff",
+          "text-secondary": "#475569",
+          "secondary-fixed-dim": "#c3c0ff",
+          "surface-card": "#FFFFFF",
+          "text-muted": "#94A3B8",
+          "surface-elevated": "#FFFFFF",
+          "primary-container": "#131b2e",
+          "surface-variant": "#d3e4fe",
+          "surface-bright": "#f8f9ff",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed-variant": "#574425",
+          "text-primary": "#0F172A",
+          "primary": "#000000",
+          "status-progress-bg": "#EEF2FF",
+          "status-completed-bg": "#ECFDF5",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "tag-bug-bg": "#FEF2F2",
+          "tertiary": "#000000",
+          "on-secondary-container": "#fffbff",
+          "on-tertiary-container": "#98805d",
+          "surface-canvas": "#F8FAFC",
+          "background": "#f8f9ff",
+          "primary-fixed": "#dae2fd",
+          "secondary-fixed": "#e2dfff",
+          "surface-container-high": "#dce9ff",
+          "status-completed-text": "#047857",
+          "status-planned-bg": "#FFFBEB",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#645efb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "margin": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-md": "0.75rem",
+          "margin-lg": "2rem",
+          "space-xs": "0.25rem",
+          "gutter-lg": "1.5rem",
+          "margin-md": "1.5rem",
+          "space-lg": "1.25rem"
+        },
+        "fontFamily": {
+          "headline-xl-mobile": ["Geist"],
+          "label-sm": ["Geist"],
+          "headline-md": ["Geist"],
+          "body-sm": ["Geist"],
+          "headline-xl": ["Geist"],
+          "body-md": ["Geist"],
+          "mono-metric": ["JetBrains Mono"],
+          "headline-lg": ["Geist"],
+          "label-md": ["Geist"],
+          "headline-sm": ["Geist"],
+          "body-lg": ["Geist"]
+        },
+        "fontSize": {
+          "headline-xl-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "mono-metric": ["12px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-card/95 backdrop-blur-md border-b border-border-subtle"><div class="h-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2 text-text-primary no-underline" data-path="feedback-board" href="#"><div class="w-6 h-6 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[16px]">bolt</span></div><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary">FeedbackFlow</span></a><nav class="hidden md:flex items-center gap-6 h-14" data-active-classes="text-text-primary font-semibold border-b-2 border-text-primary"><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="feedback-board" href="#">Feedback Board</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-roadmap" href="#">Public Roadmap</a><a aria-current="page" class="h-full inline-flex items-center px-1 transition-colors text-text-primary font-semibold border-b-2 border-text-primary" data-path="admin-dashboard" href="#">Admin Dashboard</a></nav></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-canvas text-text-secondary hover:border-border-strong text-body-sm font-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-text-muted">search</span><span>Search feedback...</span><kbd class="hidden lg:inline-block px-1.5 py-0.5 rounded bg-surface border border-border-subtle font-mono-metric text-mono-metric text-text-muted">⌘K</kbd></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Submit Feedback</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-14 bg-surface"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+<!-- Top Action / Title Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-secondary-container text-on-secondary">
+<span class="material-symbols-outlined text-[13px]">tune</span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-text-muted">Operations & Strategy</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">Feedback Administration & Triage</h1>
+<p class="font-body-md text-body-md text-text-secondary max-w-2xl">
+          Monitor user demand, triage incoming requests, and update roadmap development statuses.
+        </p>
+</div>
+<div class="flex items-center gap-3 self-start md:self-auto">
+<div class="relative">
+<button class="inline-flex items-center gap-2 h-9 px-3.5 rounded-lg bg-surface-card text-text-primary font-label-md text-label-md shadow-sm hover:bg-surface-canvas transition-colors" id="dateFilterBtn" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">calendar_today</span>
+<span>Last 30 Days</span>
+<span class="material-symbols-outlined text-[16px] text-text-muted">expand_more</span>
+</button>
+</div>
+<button class="inline-flex items-center gap-2 h-9 px-3.5 rounded-lg bg-surface-card text-text-primary font-label-md text-label-md shadow-sm hover:bg-surface-canvas transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px] text-text-secondary">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Key Metrics Cards Row (4 cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Metric 1 -->
+<div class="p-5 rounded-xl bg-surface-card shadow-sm flex flex-col justify-between space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Total Feedback Requests</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-text-primary">142</span>
+<span class="inline-flex items-center font-label-sm text-label-sm text-tag-improvement-text font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+12%
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">vs. previous period</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-5 rounded-xl bg-surface-card shadow-sm flex flex-col justify-between space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Total Votes Cast</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">thumb_up</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-text-primary">3,840</span>
+<span class="inline-flex items-center font-label-sm text-label-sm text-tag-improvement-text font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+28%
+            </span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">High engagement rate</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-5 rounded-xl bg-surface-card shadow-sm flex flex-col justify-between space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Status Breakdown</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">pie_chart</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-review-text"></span>
+<span class="text-text-secondary">Review:</span>
+<span class="font-mono-metric text-mono-metric text-text-primary ml-auto">14</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-planned-text"></span>
+<span class="text-text-secondary">Plan:</span>
+<span class="font-mono-metric text-mono-metric text-text-primary ml-auto">36</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-progress-text"></span>
+<span class="text-text-secondary">Prog:</span>
+<span class="font-mono-metric text-mono-metric text-text-primary ml-auto">26</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-status-completed-text"></span>
+<span class="text-text-secondary">Done:</span>
+<span class="font-mono-metric text-mono-metric text-text-primary ml-auto">66</span>
+</div>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-5 rounded-xl bg-surface-card shadow-sm flex flex-col justify-between space-y-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Average Vote Density</span>
+<div class="w-8 h-8 rounded-lg bg-surface-container-low flex items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">speed</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-xl text-headline-xl text-text-primary">27.0</span>
+<span class="font-label-md text-label-md text-text-secondary">avg/item</span>
+</div>
+<span class="font-body-sm text-body-sm text-text-muted">Top decile scores 114+</span>
+</div>
+</div>
+</div>
+<!-- Status Distribution Bar / Visual Section -->
+<div class="p-6 rounded-xl bg-surface-card shadow-sm space-y-5">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary">Roadmap Velocity & Distribution</h2>
+<p class="font-body-sm text-body-sm text-text-muted">Overview of requests categorized by active pipeline stages</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-mono-metric text-mono-metric text-text-secondary bg-surface-container-low px-2 py-1 rounded">142 Items Triaged</span>
+</div>
+</div>
+<!-- Segmented Bar -->
+<div class="w-full h-3 rounded-full bg-surface-container-low overflow-hidden flex">
+<div class="h-full bg-status-review-text hover:opacity-90 transition-opacity" style="width: 10%;" title="Under Review: 10%"></div>
+<div class="h-full bg-status-planned-text hover:opacity-90 transition-opacity" style="width: 25%;" title="Planned: 25%"></div>
+<div class="h-full bg-status-progress-text hover:opacity-90 transition-opacity" style="width: 18%;" title="In Progress: 18%"></div>
+<div class="h-full bg-status-completed-text hover:opacity-90 transition-opacity" style="width: 47%;" title="Completed: 47%"></div>
+</div>
+<!-- Legend -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-1">
+<div class="flex items-center gap-2.5">
+<div class="w-3 h-3 rounded-full bg-status-review-text flex-shrink-0"></div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-medium">Under Review</div>
+<div class="font-mono-metric text-mono-metric text-text-muted">14 items (10%)</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-3 h-3 rounded-full bg-status-planned-text flex-shrink-0"></div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-medium">Planned</div>
+<div class="font-mono-metric text-mono-metric text-text-muted">36 items (25%)</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-3 h-3 rounded-full bg-status-progress-text flex-shrink-0"></div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-medium">In Progress</div>
+<div class="font-mono-metric text-mono-metric text-text-muted">26 items (18%)</div>
+</div>
+</div>
+<div class="flex items-center gap-2.5">
+<div class="w-3 h-3 rounded-full bg-status-completed-text flex-shrink-0"></div>
+<div>
+<div class="font-label-md text-label-md text-text-primary font-medium">Completed</div>
+<div class="font-mono-metric text-mono-metric text-text-muted">66 items (47%)</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Searchable Feedback Management Table Section -->
+<div class="rounded-xl bg-surface-card shadow-sm overflow-hidden flex flex-col">
+<!-- Table Controls Bar -->
+<div class="p-5 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-surface-card">
+<!-- Search Input -->
+<div class="relative flex-1 max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full h-9 pl-9 pr-4 rounded-lg bg-surface-canvas text-text-primary placeholder:text-text-muted font-body-sm text-body-sm focus:outline-none focus:bg-surface-elevated transition-colors shadow-inner" id="feedbackSearch" placeholder="Search by title, author, category..." type="text"/>
+</div>
+<!-- Filter Tabs & Rows Per Page -->
+<div class="flex flex-wrap items-center justify-between lg:justify-end gap-3">
+<div class="inline-flex p-1 rounded-lg bg-surface-container-low text-text-secondary font-label-md text-label-md">
+<button class="filter-tab px-3 py-1 rounded-md bg-surface-card text-text-primary font-medium shadow-xs" data-status="ALL">All (142)</button>
+<button class="filter-tab px-3 py-1 rounded-md hover:text-text-primary transition-colors" data-status="UNDER_REVIEW">Review (14)</button>
+<button class="filter-tab px-3 py-1 rounded-md hover:text-text-primary transition-colors" data-status="PLANNED">Planned (36)</button>
+<button class="filter-tab px-3 py-1 rounded-md hover:text-text-primary transition-colors" data-status="IN_PROGRESS">Progress (26)</button>
+<button class="filter-tab px-3 py-1 rounded-md hover:text-text-primary transition-colors" data-status="COMPLETED">Completed (66)</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-text-muted">Rows:</span>
+<select class="h-8 px-2 rounded-lg bg-surface-canvas text-text-primary font-label-sm text-label-sm focus:outline-none">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Main Data Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-text-secondary font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-5 font-semibold" scope="col">Feedback Title & Snippet</th>
+<th class="py-3 px-4 font-semibold" scope="col">Category</th>
+<th class="py-3 px-4 font-semibold" scope="col">Author & Date</th>
+<th class="py-3 px-4 font-semibold cursor-pointer select-none group" id="sortVotes" scope="col">
+<div class="flex items-center gap-1">
+<span>Votes</span>
+<span class="material-symbols-outlined text-[14px] text-text-muted group-hover:text-text-primary">arrow_downward</span>
+</div>
+</th>
+<th class="py-3 px-4 font-semibold" scope="col">Current Status</th>
+<th class="py-3 px-5 text-right font-semibold" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-text-primary font-body-sm text-body-sm" id="feedbackTableBody">
+<!-- Row 1 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="IN_PROGRESS" data-votes="342">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Two-factor authentication via Security Keys (WebAuthn/FIDO2)
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Hardware key support (YubiKey) for elevated team security policies across sensitive admin nodes.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-feature-bg text-tag-feature-text">Feature</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Marcus Vance</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 24, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>342</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-progress-bg text-status-progress-text focus:outline-none cursor-pointer">
+<option value="UNDER_REVIEW">Under Review</option>
+<option value="PLANNED">Planned</option>
+<option selected="" value="IN_PROGRESS">In Progress</option>
+<option value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="PLANNED" data-votes="289">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Native Jira Cloud bidirectional synchronization
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Allow issues moved on roadmap kanban to automatically update corresponding sprint backlogs in Atlassian.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-integration-bg text-tag-integration-text">Integration</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Evelyn Shaw</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 26, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>289</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-planned-bg text-status-planned-text focus:outline-none cursor-pointer">
+<option value="UNDER_REVIEW">Under Review</option>
+<option selected="" value="PLANNED">Planned</option>
+<option value="IN_PROGRESS">In Progress</option>
+<option value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="UNDER_REVIEW" data-votes="195">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Export high-resolution roadmap SVG for stakeholder slides
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Executive reporting requires clean vector export without watermarks or scrollbars.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-improvement-bg text-tag-improvement-text">Improvement</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Devon Chen</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 28, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>195</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-review-bg text-status-review-text focus:outline-none cursor-pointer">
+<option selected="" value="UNDER_REVIEW">Under Review</option>
+<option value="PLANNED">Planned</option>
+<option value="IN_PROGRESS">In Progress</option>
+<option value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="COMPLETED" data-votes="412">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Granular team workspace permissions and read-only roles
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Allow non-technical product observers to view upcoming roadmap milestones without edit privileges.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-feature-bg text-tag-feature-text">Feature</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Sarah Kovacs</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 12, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>412</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-completed-bg text-status-completed-text focus:outline-none cursor-pointer">
+<option value="UNDER_REVIEW">Under Review</option>
+<option value="PLANNED">Planned</option>
+<option value="IN_PROGRESS">In Progress</option>
+<option selected="" value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="IN_PROGRESS" data-votes="156">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Fix intermittent Safari session dropouts on token renewal
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Safari ITP causes cookie drops during OAuth refresh cycles in background tabs.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-bug-bg text-tag-bug-text">Bug</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Liam O'Connor</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 29, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>156</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-progress-bg text-status-progress-text focus:outline-none cursor-pointer">
+<option value="UNDER_REVIEW">Under Review</option>
+<option value="PLANNED">Planned</option>
+<option selected="" value="IN_PROGRESS">In Progress</option>
+<option value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="feedback-row hover:bg-surface-canvas transition-colors" data-status="UNDER_REVIEW" data-votes="88">
+<td class="py-4 px-5 max-w-sm">
+<div class="flex flex-col">
+<a class="font-headline-sm text-headline-sm text-text-primary hover:text-secondary font-medium truncate" href="#">
+                    Linear webhook trigger for automatic status alignment
+                  </a>
+<p class="text-text-secondary line-clamp-1 mt-0.5">
+                    Sync Linear project state changes automatically to customer-facing public milestones.
+                  </p>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<span class="inline-flex items-center px-2 py-0.5 rounded font-label-sm text-label-sm bg-tag-integration-bg text-tag-integration-text">Integration</span>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-medium text-text-primary">Priya Patel</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">Oct 30, 2025</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container-low font-mono-metric text-mono-metric font-semibold text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-secondary">arrow_drop_up</span>
+<span>88</span>
+</div>
+</td>
+<td class="py-4 px-4 whitespace-nowrap">
+<select class="status-dropdown h-8 px-2.5 rounded-md font-label-sm text-label-sm font-medium bg-status-review-bg text-status-review-text focus:outline-none cursor-pointer">
+<option selected="" value="UNDER_REVIEW">Under Review</option>
+<option value="PLANNED">Planned</option>
+<option value="IN_PROGRESS">In Progress</option>
+<option value="COMPLETED">Completed</option>
+</select>
+</td>
+<td class="py-4 px-5 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-1.5 rounded hover:bg-surface-container-high text-text-secondary hover:text-text-primary transition-colors" title="View Details" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded hover:bg-error-container text-text-secondary hover:text-error transition-colors" title="Delete Feedback" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination / Footer Metadata Bar -->
+<div class="px-5 py-3.5 bg-surface-card flex flex-col sm:flex-row items-center justify-between gap-3 text-body-sm font-body-sm text-text-secondary">
+<div>
+          Showing <span class="font-medium text-text-primary">1</span> to <span class="font-medium text-text-primary">6</span> of <span class="font-medium text-text-primary">142</span> results
+        </div>
+<div class="flex items-center gap-1.5">
+<button class="h-8 px-2.5 rounded-md bg-surface-canvas text-text-muted hover:text-text-primary transition-colors disabled:opacity-50" disabled="" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_left</span>
+</button>
+<button class="h-8 w-8 rounded-md bg-primary text-on-primary font-label-md text-label-md" type="button">1</button>
+<button class="h-8 w-8 rounded-md bg-surface-canvas hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors" type="button">2</button>
+<button class="h-8 w-8 rounded-md bg-surface-canvas hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors" type="button">3</button>
+<span class="px-1 text-text-muted">...</span>
+<button class="h-8 w-8 rounded-md bg-surface-canvas hover:bg-surface-container text-text-primary font-label-md text-label-md transition-colors" type="button">15</button>
+<button class="h-8 px-2.5 rounded-md bg-surface-canvas text-text-secondary hover:text-text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Dynamic Select Styling & Status Change
+    const statusClasses = {
+      'UNDER_REVIEW': { bg: 'bg-status-review-bg', text: 'text-status-review-text' },
+      'PLANNED': { bg: 'bg-status-planned-bg', text: 'text-status-planned-text' },
+      'IN_PROGRESS': { bg: 'bg-status-progress-bg', text: 'text-status-progress-text' },
+      'COMPLETED': { bg: 'bg-status-completed-bg', text: 'text-status-completed-text' }
+    };
+
+    const selects = document.querySelectorAll('.status-dropdown');
+    selects.forEach(sel => {
+      sel.addEventListener('change', (e) => {
+        const val = e.target.value;
+        const row = e.target.closest('tr');
+        if (row) {
+          row.dataset.status = val;
+        }
+
+        // Reset existing classes
+        Object.values(statusClasses).forEach(c => {
+          sel.classList.remove(c.bg, c.text);
+        });
+
+        // Apply new style
+        if (statusClasses[val]) {
+          sel.classList.add(statusClasses[val].bg, statusClasses[val].text);
+        }
+      });
+    });
+
+    // Filtering Tabs
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const tableRows = document.querySelectorAll('.feedback-row');
+
+    filterTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        filterTabs.forEach(t => {
+          t.classList.remove('bg-surface-card', 'text-text-primary', 'shadow-xs');
+          t.classList.add('hover:text-text-primary');
+        });
+        tab.classList.add('bg-surface-card', 'text-text-primary', 'shadow-xs');
+        tab.classList.remove('hover:text-text-primary');
+
+        const targetStatus = tab.dataset.status;
+        filterRows();
+      });
+    });
+
+    // Real-time Search
+    const searchInput = document.getElementById('feedbackSearch');
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        filterRows();
+      });
+    }
+
+    function filterRows() {
+      const activeTab = document.querySelector('.filter-tab.bg-surface-card');
+      const targetStatus = activeTab ? activeTab.dataset.status : 'ALL';
+      const term = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+      tableRows.forEach(row => {
+        const matchesStatus = (targetStatus === 'ALL' || row.dataset.status === targetStatus);
+        const textContent = row.textContent.toLowerCase();
+        const matchesSearch = textContent.includes(term);
+
+        if (matchesStatus && matchesSearch) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+
+    // Sort by Votes
+    const sortBtn = document.getElementById('sortVotes');
+    let sortAsc = false;
+    if (sortBtn) {
+      sortBtn.addEventListener('click', () => {
+        const tbody = document.getElementById('feedbackTableBody');
+        const rowsArr = Array.from(tableRows);
+        sortAsc = !sortAsc;
+
+        rowsArr.sort((a, b) => {
+          const vA = parseInt(a.dataset.votes || '0', 10);
+          const vB = parseInt(b.dataset.votes || '0', 10);
+          return sortAsc ? vA - vB : vB - vA;
+        });
+
+        rowsArr.forEach(r => tbody.appendChild(r));
+        const icon = sortBtn.querySelector('.material-symbols-outlined');
+        if (icon) {
+          icon.textContent = sortAsc ? 'arrow_upward' : 'arrow_downward';
+        }
+      });
+    }
+  })();
+</script></main><footer class="w-full border-t border-border-subtle bg-surface-card py-8 mt-auto"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[14px]">bolt</span></div><span class="font-label-md text-label-md font-semibold text-text-primary">FeedbackFlow</span><span class="text-body-sm font-body-sm text-text-muted ml-2">© 2025 FeedbackFlow Inc. All rights reserved.</span></div><div class="flex items-center gap-6 text-body-sm font-body-sm text-text-secondary"><a class="hover:text-text-primary transition-colors" data-path="changelog" href="#">Changelog</a><a class="hover:text-text-primary transition-colors" data-path="documentation" href="#">Docs</a><a class="hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-text-primary transition-colors" data-path="status" href="#">Status</a></div></div></footer></body></html>

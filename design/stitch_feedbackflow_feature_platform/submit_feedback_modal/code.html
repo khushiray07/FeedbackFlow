@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "inverse-on-surface": "#eaf1ff",
+          "status-review-text": "#6D28D9",
+          "on-surface-variant": "#45464d",
+          "on-tertiary": "#ffffff",
+          "status-planned-text": "#B45309",
+          "surface-container-lowest": "#ffffff",
+          "status-review-border": "#DDD6FE",
+          "on-background": "#0b1c30",
+          "on-surface": "#0b1c30",
+          "tag-integration-text": "#7E22CE",
+          "interactive-active-bg": "#EEF2FF",
+          "surface-tint": "#565e74",
+          "status-progress-border": "#C7D2FE",
+          "secondary": "#4b41e1",
+          "tertiary-container": "#271901",
+          "interactive-active-text": "#4338CA",
+          "tag-feature-bg": "#F1F5F9",
+          "outline-variant": "#c6c6cd",
+          "status-review-bg": "#F5F3FF",
+          "outline": "#76777d",
+          "on-tertiary-fixed": "#271901",
+          "status-planned-border": "#FDE68A",
+          "error": "#ba1a1a",
+          "border-subtle": "#E2E8F0",
+          "tag-integration-bg": "#FAF5FF",
+          "tertiary-fixed": "#fcdeb5",
+          "on-primary-container": "#7c839b",
+          "status-completed-border": "#A7F3D0",
+          "error-container": "#ffdad6",
+          "inverse-surface": "#213145",
+          "surface": "#f8f9ff",
+          "on-secondary-fixed": "#0f0069",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d3e4fe",
+          "tag-feature-text": "#334155",
+          "on-primary-fixed-variant": "#3f465c",
+          "status-progress-text": "#4338CA",
+          "surface-container-low": "#eff4ff",
+          "on-error-container": "#93000a",
+          "tag-improvement-bg": "#F0FDF4",
+          "on-secondary-fixed-variant": "#3323cc",
+          "interactive-active-border": "#6366F1",
+          "surface-container": "#e5eeff",
+          "tag-improvement-text": "#15803D",
+          "tertiary-fixed-dim": "#dec29a",
+          "border-strong": "#CBD5E1",
+          "border-focus": "#0F172A",
+          "inverse-primary": "#bec6e0",
+          "tag-bug-text": "#B91C1C",
+          "on-primary": "#ffffff",
+          "text-secondary": "#475569",
+          "secondary-fixed-dim": "#c3c0ff",
+          "surface-card": "#FFFFFF",
+          "text-muted": "#94A3B8",
+          "surface-elevated": "#FFFFFF",
+          "primary-container": "#131b2e",
+          "surface-variant": "#d3e4fe",
+          "surface-bright": "#f8f9ff",
+          "on-error": "#ffffff",
+          "on-tertiary-fixed-variant": "#574425",
+          "text-primary": "#0F172A",
+          "primary": "#000000",
+          "status-progress-bg": "#EEF2FF",
+          "status-completed-bg": "#ECFDF5",
+          "primary-fixed-dim": "#bec6e0",
+          "on-primary-fixed": "#131b2e",
+          "tag-bug-bg": "#FEF2F2",
+          "tertiary": "#000000",
+          "on-secondary-container": "#fffbff",
+          "on-tertiary-container": "#98805d",
+          "surface-canvas": "#F8FAFC",
+          "background": "#f8f9ff",
+          "primary-fixed": "#dae2fd",
+          "secondary-fixed": "#e2dfff",
+          "surface-container-high": "#dce9ff",
+          "status-completed-text": "#047857",
+          "status-planned-bg": "#FFFBEB",
+          "surface-dim": "#cbdbf5",
+          "secondary-container": "#645efb"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xl": "2rem",
+          "margin": "1rem",
+          "space-sm": "0.5rem",
+          "gutter": "1rem",
+          "space-md": "0.75rem",
+          "margin-lg": "2rem",
+          "space-xs": "0.25rem",
+          "gutter-lg": "1.5rem",
+          "margin-md": "1.5rem",
+          "space-lg": "1.25rem"
+        },
+        "fontFamily": {
+          "headline-xl-mobile": ["Geist"],
+          "label-sm": ["Geist"],
+          "headline-md": ["Geist"],
+          "body-sm": ["Geist"],
+          "headline-xl": ["Geist"],
+          "body-md": ["Geist"],
+          "mono-metric": ["JetBrains Mono"],
+          "headline-lg": ["Geist"],
+          "label-md": ["Geist"],
+          "headline-sm": ["Geist"],
+          "body-lg": ["Geist"]
+        },
+        "fontSize": {
+          "headline-xl-mobile": ["26px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["18px", {"lineHeight": "24px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+          "body-sm": ["13px", {"lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.025em", "fontWeight": "600"}],
+          "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400"}],
+          "mono-metric": ["12px", {"lineHeight": "16px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-md": ["13px", {"lineHeight": "16px", "letterSpacing": "0em", "fontWeight": "500"}],
+          "headline-sm": ["15px", {"lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-surface text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-card/95 backdrop-blur-md border-b border-border-subtle"><div class="h-14 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2 text-text-primary no-underline" data-path="feedback-board" href="#"><div class="w-6 h-6 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[16px]">bolt</span></div><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-text-primary">FeedbackFlow</span></a><nav class="hidden md:flex items-center gap-6 h-14" data-active-classes="text-text-primary font-semibold border-b-2 border-text-primary"><a aria-current="page" class="h-full inline-flex items-center px-1 transition-colors text-text-primary font-semibold border-b-2 border-text-primary" data-path="feedback-board" href="#">Feedback Board</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="public-roadmap" href="#">Public Roadmap</a><a class="h-full inline-flex items-center px-1 font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="admin-dashboard" href="#">Admin Dashboard</a></nav></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border-subtle bg-surface-canvas text-text-secondary hover:border-border-strong text-body-sm font-body-sm transition-colors" type="button"><span class="material-symbols-outlined text-[16px] text-text-muted">search</span><span>Search feedback...</span><kbd class="hidden lg:inline-block px-1.5 py-0.5 rounded bg-surface border border-border-subtle font-mono-metric text-mono-metric text-text-muted">⌘K</kbd></button><button class="p-1.5 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors relative" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><button class="inline-flex items-center gap-1.5 h-9 px-3.5 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>Submit Feedback</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 w-full pt-14 bg-surface"><div class="flex flex-col w-full relative">
+<!-- Underlying Feedback Board (Dimmed & Blurred Backdrop Context) -->
+<div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pointer-events-none select-none filter blur-[2px] opacity-40">
+<!-- Board Subheader & Filter Ribbon -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono-metric text-mono-metric text-secondary font-semibold uppercase tracking-wider">Product Backlog</span>
+<span class="w-1.5 h-1.5 rounded-full bg-status-progress-border"></span>
+<span class="font-label-sm text-label-sm text-text-muted">142 total ideas</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary tracking-tight">Community Feedback Board</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center rounded-xl bg-surface-container-low p-1 text-text-secondary text-body-sm font-body-sm">
+<button class="px-3 py-1.5 rounded-lg bg-surface-card text-text-primary shadow-sm font-label-md text-label-md">Trending</button>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary font-label-md text-label-md">Most Upvoted</button>
+<button class="px-3 py-1.5 rounded-lg text-text-secondary font-label-md text-label-md">Recent</button>
+</div>
+</div>
+</div>
+<!-- Feedback Columns / Mock Grid View -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm flex gap-4">
+<div class="w-11 h-13 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_up</span>
+<span class="font-mono-metric text-mono-metric">189</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-tag-feature-bg text-tag-feature-text">Feature</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-status-progress-bg text-status-progress-text">
+<span class="w-1.5 h-1.5 rounded-full bg-status-progress-text"></span> In Progress
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary truncate">Native Linear bi-directional sync</h2>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">Automatically push upvoted feedback items directly to Linear issue queues with synchronized state tracking.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm flex gap-4">
+<div class="w-11 h-13 rounded-lg bg-interactive-active-bg text-interactive-active-text flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">keyboard_arrow_up</span>
+<span class="font-mono-metric text-mono-metric">94</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-tag-integration-bg text-tag-integration-text">Integration</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-status-planned-bg text-status-planned-text">
+<span class="w-1.5 h-1.5 rounded-full bg-status-planned-text"></span> Planned
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary truncate">Custom webhook alerts on status transition</h2>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">Trigger incident management webhooks whenever customer feedback moves from Under Review to In Progress.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-card rounded-xl p-4 shadow-sm flex gap-4">
+<div class="w-11 h-13 rounded-lg bg-surface-container-low flex flex-col items-center justify-center text-text-secondary">
+<span class="material-symbols-outlined text-[18px]">keyboard_arrow_up</span>
+<span class="font-mono-metric text-mono-metric">42</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-2 mb-1.5">
+<span class="px-2 py-0.5 rounded text-label-sm font-label-sm bg-tag-improvement-bg text-tag-improvement-text">Improvement</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-label-sm font-label-sm bg-status-review-bg text-status-review-text">
+<span class="w-1.5 h-1.5 rounded-full bg-status-review-text"></span> Under Review
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-text-primary truncate">CSV Export of upvoter profiles & emails</h2>
+<p class="font-body-sm text-body-sm text-text-secondary line-clamp-2 mt-1">Download contact details for every customer who registered an upvote to conduct discovery interviews.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop Layer -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-on-background/40 backdrop-blur-md transition-opacity duration-200" id="modal-container">
+<!-- Centered Modal Card -->
+<div class="w-full max-w-[620px] bg-surface-card rounded-xl shadow-2xl overflow-hidden flex flex-col transform transition-all duration-300 scale-100">
+<!-- Top Decorative Engineered Scrim Line -->
+<div class="h-1 w-full bg-gradient-to-r from-secondary via-interactive-active-border to-secondary-container"></div>
+<!-- Modal Header -->
+<div class="px-6 pt-5 pb-4 flex items-start justify-between gap-4 bg-surface-card">
+<div class="flex items-start gap-3.5">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[22px]">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md text-text-primary tracking-tight">Submit New Feedback</h2>
+<p class="font-body-sm text-body-sm text-text-secondary mt-0.5">Propose a feature request or report an issue for the product team.</p>
+</div>
+</div>
+<button aria-label="Close dialog" class="w-8 h-8 rounded-lg flex items-center justify-center text-text-muted hover:text-text-primary hover:bg-surface-container-low transition-colors" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Form Body -->
+<form class="px-6 py-2 flex flex-col gap-5 overflow-y-auto max-h-[calc(100vh-210px)]" id="feedback-form" onsubmit="event.preventDefault(); handleSubmit();">
+<!-- Field 1: Title -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-primary flex items-center gap-1" for="feedback-title">
+              Title <span class="text-error font-medium">*</span>
+</label>
+<span class="font-mono-metric text-mono-metric text-text-muted" id="title-counter">38 / 100</span>
+</div>
+<div class="relative">
+<input class="w-full h-10 px-3.5 rounded-lg bg-surface-card text-text-primary placeholder:text-text-muted text-body-md font-body-md transition-shadow focus:outline-none focus:ring-2 focus:ring-border-focus bg-surface-canvas shadow-inner" id="feedback-title" maxlength="100" placeholder="e.g., Slack webhook notifications for deployment alerts" required="" type="text" value="Slack webhook notifications for deployment alerts"/>
+</div>
+</div>
+<!-- Field 2: Category Selector (Horizontal Segmented Pills) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-primary flex items-center gap-1">
+              Category <span class="text-error font-medium">*</span>
+</label>
+<span class="font-label-sm text-label-sm text-text-muted">Select classification</span>
+</div>
+<div aria-label="Feedback Category" class="grid grid-cols-2 sm:grid-cols-4 gap-2 p-1 rounded-xl bg-surface-container-low" role="radiogroup">
+<!-- Feature (Selected) -->
+<button aria-checked="true" class="category-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-interactive-active-text bg-surface-card shadow-sm font-label-md text-label-md transition-all font-semibold" data-category="Feature" onclick="selectCategory(this)" role="radio" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Feature</span>
+</button>
+<!-- Improvement -->
+<button aria-checked="false" class="category-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-card/60 font-label-md text-label-md transition-all font-medium" data-category="Improvement" onclick="selectCategory(this)" role="radio" type="button">
+<span class="w-2 h-2 rounded-full bg-tag-improvement-text opacity-50"></span>
+<span>Improvement</span>
+</button>
+<!-- Bug -->
+<button aria-checked="false" class="category-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-card/60 font-label-md text-label-md transition-all font-medium" data-category="Bug" onclick="selectCategory(this)" role="radio" type="button">
+<span class="w-2 h-2 rounded-full bg-tag-bug-text opacity-50"></span>
+<span>Bug</span>
+</button>
+<!-- Integration -->
+<button aria-checked="false" class="category-btn flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-card/60 font-label-md text-label-md transition-all font-medium" data-category="Integration" onclick="selectCategory(this)" role="radio" type="button">
+<span class="w-2 h-2 rounded-full bg-tag-integration-text opacity-50"></span>
+<span>Integration</span>
+</button>
+</div>
+</div>
+<!-- Field 3: Description Textarea -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md text-text-primary flex items-center gap-1" for="feedback-desc">
+              Description <span class="text-error font-medium">*</span>
+</label>
+<span class="font-mono-metric text-mono-metric text-text-muted" id="desc-counter">142 / 2000</span>
+</div>
+<div class="relative">
+<textarea class="w-full p-3.5 rounded-lg bg-surface-canvas text-text-primary placeholder:text-text-muted text-body-md font-body-md transition-shadow resize-none focus:outline-none focus:ring-2 focus:ring-border-focus shadow-inner" id="feedback-desc" maxlength="2000" placeholder="Describe the problem you're experiencing or the capability you would like added..." required="" rows="4">We frequently miss pipeline rollbacks because our DevOps teams reside primarily in Slack channel alerts. Providing custom webhook configurations would streamline visibility instantly.</textarea>
+</div>
+</div>
+<!-- Visual Media / Attachment Preview (Engineered Density) -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-secondary">Attachments (Optional)</span>
+<span class="font-label-sm text-label-sm text-text-muted">PNG, JPG, or PDF up to 10MB</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-lg overflow-hidden shrink-0 group">
+<img class="w-full h-full object-cover transition-transform group-hover:scale-105" data-alt="Technical dashboard screenshot showing an alert payload panel with indigo highlights and crisp metrics cards, crisp software UI aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaWlCMCz4ZYUMMlTBzOh6wH6sTgkKiMiWw7RxZ3eacLLztUfwD5H6QNmimt2QhmUYjGgMsDbk4mI0rIYMjJTzfkGfm4R3VPr1Ix6xfJ-cTe-MRUjhAVOLGQ-obnbL8-eiS7wnLPTZaOrvrP_5yZ5iXyKm0xsZyR4YXVuZ2lUD_XmahKv6JkiA8YZIAZ0XSXLek19yAyLD14xAIIs9GCnJNkaaye1yTrwio3jY0OSI"/>
+<div class="absolute inset-0 bg-on-background/20 group-hover:bg-on-background/40 transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[16px]">visibility</span>
+</div>
+</div>
+<div class="flex-1 flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">attachment</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-text-primary truncate">slack-webhook-mockup.png</span>
+<span class="font-mono-metric text-mono-metric text-text-muted">348 KB</span>
+</div>
+</div>
+<button class="p-1 rounded text-text-muted hover:text-error hover:bg-surface-card transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+<button class="h-14 px-3 rounded-lg bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary flex flex-col items-center justify-center gap-0.5 text-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">add_photo_alternate</span>
+<span class="font-label-sm text-label-sm">Add</span>
+</button>
+</div>
+</div>
+<!-- Helpful Info Notice Box -->
+<div class="rounded-xl p-3.5 bg-interactive-active-bg flex items-start gap-3">
+<div class="w-6 h-6 rounded-full bg-secondary/15 flex items-center justify-center shrink-0 text-interactive-active-text mt-0.5">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</div>
+<div class="flex-1">
+<p class="font-body-sm text-body-sm text-interactive-active-text leading-snug">
+              New submissions are reviewed by product admins and placed into <span class="font-semibold underline decoration-interactive-active-text/40">Under Review</span> before appearing on the public roadmap.
+            </p>
+</div>
+</div>
+</form>
+<!-- Modal Footer -->
+<div class="px-6 py-4 bg-surface-card flex flex-col-reverse sm:flex-row items-center justify-between gap-3">
+<!-- Status / Hint Indicator -->
+<div class="flex items-center gap-2 text-text-muted font-label-sm text-label-sm" id="status-hint">
+<span class="w-2 h-2 rounded-full bg-status-completed-text animate-pulse"></span>
+<span>Draft autosaved locally</span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center justify-end gap-2.5 w-full sm:w-auto">
+<button class="w-full sm:w-auto h-9 px-4 rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-container-low font-label-md text-label-md font-medium transition-colors" id="btn-cancel" type="button">
+            Cancel
+          </button>
+<button class="w-full sm:w-auto h-9 px-4 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-medium hover:bg-secondary/90 active:scale-[0.98] transition-all shadow-sm flex items-center justify-center gap-2 group" id="btn-submit" onclick="handleSubmit()" type="button">
+<span>Submit Feedback</span>
+<span class="material-symbols-outlined text-[16px] transition-transform group-hover:translate-x-0.5">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Character Counter Mechanics
+    const titleInput = document.getElementById('feedback-title');
+    const titleCounter = document.getElementById('title-counter');
+    const descTextarea = document.getElementById('feedback-desc');
+    const descCounter = document.getElementById('desc-counter');
+    const modalContainer = document.getElementById('modal-container');
+    const btnCancel = document.getElementById('btn-cancel');
+    const btnClose = document.getElementById('btn-close-modal');
+    const btnSubmit = document.getElementById('btn-submit');
+    const statusHint = document.getElementById('status-hint');
+
+    if (titleInput && titleCounter) {
+      titleInput.addEventListener('input', () => {
+        titleCounter.textContent = `${titleInput.value.length} / 100`;
+      });
+    }
+
+    if (descTextarea && descCounter) {
+      descTextarea.addEventListener('input', () => {
+        descCounter.textContent = `${descTextarea.value.length} / 2000`;
+      });
+    }
+
+    // Category Selector Radio Pill Behavior
+    function selectCategory(button) {
+      const allBtns = document.querySelectorAll('.category-btn');
+      allBtns.forEach(btn => {
+        btn.classList.remove('text-interactive-active-text', 'bg-surface-card', 'shadow-sm', 'font-semibold');
+        btn.classList.add('text-text-secondary', 'hover:text-text-primary', 'hover:bg-surface-card/60', 'font-medium');
+        btn.setAttribute('aria-checked', 'false');
+        
+        const dot = btn.querySelector('span:first-child');
+        if (dot) dot.classList.add('opacity-50');
+      });
+
+      button.classList.add('text-interactive-active-text', 'bg-surface-card', 'shadow-sm', 'font-semibold');
+      button.classList.remove('text-text-secondary', 'hover:text-text-primary', 'hover:bg-surface-card/60', 'font-medium');
+      button.setAttribute('aria-checked', 'true');
+
+      const selectedDot = button.querySelector('span:first-child');
+      if (selectedDot) selectedDot.classList.remove('opacity-50');
+    }
+
+    // Modal Close Action Micro-state
+    function closeModal() {
+      modalContainer.style.opacity = '0';
+      setTimeout(() => {
+        modalContainer.classList.add('hidden');
+      }, 200);
+    }
+
+    if (btnCancel) btnCancel.addEventListener('click', closeModal);
+    if (btnClose) btnClose.addEventListener('click', closeModal);
+
+    // Submission Micro-State
+    function handleSubmit() {
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = `
+        <span class="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></span>
+        <span>Submitting...</span>
+      `;
+      statusHint.innerHTML = `
+        <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+        <span>Pushing to review pipeline...</span>
+      `;
+
+      setTimeout(() => {
+        btnSubmit.innerHTML = `
+          <span class="material-symbols-outlined text-[16px]">check</span>
+          <span>Submitted!</span>
+        `;
+        btnSubmit.classList.remove('bg-secondary');
+        btnSubmit.classList.add('bg-status-completed-text');
+
+        statusHint.innerHTML = `
+          <span class="w-2 h-2 rounded-full bg-status-completed-text"></span>
+          <span class="text-status-completed-text font-medium">Ticket #FB-4091 Created</span>
+        `;
+
+        setTimeout(() => {
+          closeModal();
+        }, 900);
+      }, 1100);
+    }
+  </script>
+</div></main><footer class="w-full border-t border-border-subtle bg-surface-card py-8 mt-auto"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4"><div class="flex items-center gap-2"><div class="w-5 h-5 rounded bg-secondary flex items-center justify-center"><span class="material-symbols-outlined text-white text-[14px]">bolt</span></div><span class="font-label-md text-label-md font-semibold text-text-primary">FeedbackFlow</span><span class="text-body-sm font-body-sm text-text-muted ml-2">© 2025 FeedbackFlow Inc. All rights reserved.</span></div><div class="flex items-center gap-6 text-body-sm font-body-sm text-text-secondary"><a class="hover:text-text-primary transition-colors" data-path="changelog" href="#">Changelog</a><a class="hover:text-text-primary transition-colors" data-path="documentation" href="#">Docs</a><a class="hover:text-text-primary transition-colors" data-path="privacy-policy" href="#">Privacy</a><a class="hover:text-text-primary transition-colors" data-path="status" href="#">Status</a></div></div></footer></body></html>
