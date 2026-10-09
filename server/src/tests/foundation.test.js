@@ -2,8 +2,13 @@ import { describe, it, expect } from 'vitest';
 import request from 'supertest';
 import app from '../app.js';
 import { assertIsolatedDatabase } from './databaseSafety.js';
+import { validateDatabaseTarget } from '../config/db.js';
 
 describe('Express test harness', () => {
+  it('reports database readiness without exposing connection details', async () => {
+    const response = await request(app).get('/api/health').expect(200);
+    expect(response.body).toEqual({ status: 'ok' });
+  });
   it('returns JSON for missing API routes without starting the application entry point', async () => {
     const response = await request(app).get('/api/not-implemented').expect(404);
     expect(response.body.error.code).toBe('NOT_FOUND');
@@ -40,5 +45,17 @@ describe('Test database safety', () => {
   it('does not inherit development or external test database credentials', () => {
     expect(process.env.MONGODB_URI).toBe('');
     expect(process.env.MONGODB_TEST_URI).toBe('');
+  });
+});
+
+describe('Production database selection', () => {
+  it('requires a separate explicit database before connecting', () => {
+    expect(() => validateDatabaseTarget('mongodb+srv://cluster.example.net/feedbackflow_prod', 'production')).not.toThrow();
+    for (const uri of [
+      'mongodb+srv://cluster.example.net/',
+      'mongodb+srv://cluster.example.net/test',
+      'mongodb+srv://cluster.example.net/feedbackflow',
+      'mongodb+srv://cluster.example.net/feedbackflow?dbName=feedbackflow_prod',
+    ]) expect(() => validateDatabaseTarget(uri, 'production')).toThrow();
   });
 });

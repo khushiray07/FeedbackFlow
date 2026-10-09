@@ -20,7 +20,8 @@ try {
   const port = Number(process.env.PORT || 3000);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be an integer from 1 to 65535.');
   await connectDatabase();
-  server = app.listen(port, '127.0.0.1', () => console.log(`FeedbackFlow API listening on port ${port}`));
+  const host = process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1';
+  server = app.listen(port, host, () => console.log(`FeedbackFlow API listening on port ${port}`));
   server.on('error', async () => {
     console.error('API listener failed. Check PORT availability.');
     await disconnectDatabase();
