@@ -1,50 +1,47 @@
-# M10 verification record
+# FeedbackFlow verification record
 
-Date: 2026-10-09. Target: local React/Vite and Express application with the configured MongoDB Atlas development database. Existing Atlas records were not reset or deleted.
+Updated: 2026-10-09. Branch: `code0/implementation-plan`. PR #1 remains open and unmerged.
 
-## Automated checks
+## Production status
 
-| Check | Result |
-|---|---|
-| `npm run lint` | Passed |
-| `npm run build` | Passed; Vite reports a non-failing chunk-size warning for the 527.38 kB JavaScript bundle |
-| `npm test` | Passed after local port binding permission: 84 server and 9 client tests, 0 failures |
+| Check | Status | Evidence and scope |
+| --- | --- | --- |
+| Render deployment | **Reported successful** | The project owner reports the live app at [feedbackflow-w4bc.onrender.com](https://feedbackflow-w4bc.onrender.com/). CodeZero's later review also reported successful read-only public API checks. This documentation pass did not control a browser or independently re-deploy the service. |
+| `GET /api/health` | **Reported working** | The live health endpoint is configured in the Render deployment and returns database readiness from the Express process. Successful health/runtime status is owner-reported; it was not independently queried in this documentation pass. |
+| Production MongoDB | **Reported connected** | The owner reports the service uses the separate Atlas database `feedbackflow_prod`; CodeZero reported available MongoDB integration checks passed. Express startup waits for Mongoose and index initialization before listening, and `/api/health` reflects Mongoose readiness. No production connection was made during this documentation work. |
+| Production feedback and demo votes | **Reported present** | CodeZero's review reported 42 feedback posts, including 40 demo posts and two other posts. The owner reports the demo seed contains 375 vote records. No production record was read or changed during this documentation work. |
+| CodeZero read-only API checks | **Reported passed** | CodeZero reported live search, sorting, pagination, and roadmap checks passed. It reported local tests for authentication/authorization, feedback creation/voting, and roadmap behavior. It did not verify authenticated production journeys or rendered mobile behavior. |
 
-The first sandboxed `npm test` attempt stopped before tests ran because MongoMemoryServer could not bind `0.0.0.0` (`EPERM`). The identical suite passed with local port binding permission.
+The production and CodeZero results above are attributed to the project owner and CodeZero review summary. They are not presented as fresh checks performed by Codex in this documentation pass.
 
-## PRD acceptance evidence
+## Automated checks performed for this submission update
 
-| Requirement | Evidence | Remaining browser check |
-|---|---|---|
-| FR-01 Authentication | Atlas-backed API registration/login/logout/session; Chrome admin login, logout and anonymous redirect; server auth tests; user reports regular-user registration and signed-in session | Independent Chrome observation of regular-user registration and session refresh |
-| FR-02 Feedback creation | Chrome required-length validation and successful submission of one safe development record; Atlas persistence; server validation tests | None for basic flow |
-| FR-03 Feedback board | Chrome Atlas board, detail, refresh, loading skeleton and two distinct pagination pages with accurate total; server listing tests | Network error recovery |
-| FR-04 Voting | Chrome authenticated vote, refresh persistence, removal, anonymous redirect; Atlas API and concurrency/idempotency server tests | None for basic flow |
-| FR-05 Discovery | Chrome search, combined category/status filter, empty state, page reset, newest/most-voted order; Atlas API and server sorting tests | None for basic flow |
-| FR-06 Feedback details | Chrome detail, navigation and voting; server invalid/missing ID tests | None for basic flow |
-| FR-07 Roadmap | Chrome grouped Atlas records, empty Completed lane, card navigation, immediate update after admin status change; server grouping/ranking tests | Responsive mobile lane UI |
-| FR-08 Admin | Chrome dashboard statistics and status change; anonymous direct `/admin` redirected to login; live Atlas admin provisioning/login/stats/update/sync and regular-user 403 checks; server tests | Chrome regular-user direct-route rejection |
-| FR-09 Responsive UI | Source reviewed against Stitch exports in M7; Chrome modal and form controls exposed accessible names | Desktop/mobile visual comparison, keyboard/focus sweep |
+| Command | Result |
+| --- | --- |
+| `npm test` | Passed: 88 backend tests across 9 files and 9 client tests; 97 total, 0 failures. The first run overlapped lint/build and timed out in two bcrypt-heavy tests; rerunning alone passed in 20 seconds for the backend suite. |
+| `npm run lint` | Passed (`eslint .`). |
+| `npm run build` | Passed. Vite emitted the existing non-failing warning that the 527.38 kB JavaScript chunk exceeds 500 kB. |
+| `git diff --check` | Passed. |
 
-The preceding Atlas integration verification is recorded in `AI_DEVELOPMENT.md`. Its API and Chrome results are distinguished above from new M10 checks. Browser and admin items remain open until exercised; passing automated tests are not presented as proof of those UI journeys.
+Backend tests run against a disposable MongoMemoryServer bound to loopback. They do not read `.env`, use Atlas credentials, or target production.
 
-## Security and code review
+## Application checks and limitations
 
-Reviewed server-side Origin enforcement, cookie-backed authentication, database-backed admin authorization, strict feedback validation, escaped search, server-side sorting before pagination, and vote uniqueness/idempotency. No security protection was relaxed. The existing admin seed script validates and hashes a new password and refuses to modify an existing user.
+The prior M10 verification recorded local/Atlas development browser checks for form validation and submission, feedback detail navigation, search and combined filters, empty/loading states, pagination, voting and vote removal with refresh persistence, anonymous vote redirects, admin statistics/status updates, roadmap changes, and logout redirects. Backend tests cover input and query validation, authorization, vote idempotency/concurrency, aggregation, and status updates. Those results apply to the development verification documented for M10; they do not establish that every authenticated workflow was repeated against production.
 
-## Open verification work
+CodeZero specifically reported these production or browser checks were not completed:
 
-- Complete independent Chrome regular-user registration/session/direct-route, responsive/keyboard, and network failure checks. The user reported that a regular account was registered and that their name and Log out appeared after refresh; the app-control window did not consistently expose that same session, so this remains user-confirmed rather than agent-observed.
-- Chrome DevTools showed the admin render error before the fix and no console messages immediately after the repaired page reloaded. A broader console sweep across all pages remains open.
+- Production registration, login, session refresh/logout, feedback creation, and authenticated voting/removal.
+- Production admin login and status changes, including their reflected roadmap update.
+- Actual mobile rendering and responsive layout behavior.
+- Keyboard-only navigation, focus visibility, and accessibility behavior.
 
-## Live Atlas admin check
+These checks remain open for final manual review. A successful build, API test, or local browser check is not treated as proof of these production/browser workflows.
 
-After the user confirmed that the three local `ADMIN_*` values were saved, `npm run seed:admin --workspace server` created one development administrator. An Atlas-backed API check then logged in as that administrator, read statistics, changed only the previously created development feedback record `6ac86809dddbdb742d8be4d1` to `planned`, and confirmed the status in details, filtered listing, and roadmap. A new regular development test user received 403 from both `GET /api/admin/stats` and `PATCH /api/feedback/:id/status`. The administrator password and test-user password were never printed. No existing Atlas data was deleted or reset.
+## Security and repository review
 
-## Chrome findings and fix
-
-Admin sign-in was completed by the user. Chrome initially rendered a blank `/admin` page. Its console showed `Cannot destructure property 'refreshKey' of 'useOutletContext(...)' as it is undefined` in `AdminDashboard`. `RequireAdmin` inserted a nested route outlet but did not forward the parent layout context. Codex passed that context through its `<Outlet>`. After reload, the dashboard rendered live totals, and changing an earlier development record to In Progress updated its row, statistics, and public roadmap group. Direct `/admin` navigation after logout redirected to `/login?returnTo=%2Fadmin`.
-
-Chrome also confirmed form validation, feedback submission, detail navigation, vote persistence after refresh, vote removal, anonymous vote redirect, search/filter/empty/loading states, most-voted ordering, and a second pagination page. Seven clearly labeled development feedback records were added solely to cross the default ten-item page boundary; they remain in Atlas. The sorting test vote was removed. Browser checks did not alter unrelated pre-existing records.
-
-M11 deployment readiness is pending these M10 browser and administrator checks.
+- Production is configured as one Render Web Service: Express serves the Vite build and REST API from one origin; Atlas stores data in `feedbackflow_prod`.
+- The seed script has dry-run and explicit `--confirm feedbackflow_prod` modes. It uses deterministic IDs and insert-only writes, rejects conflicting demo identities, and does not delete or update existing records. Seed behavior was tested against a disposable MongoMemoryServer database; no production seed was run in this documentation pass.
+- Authentication uses an HttpOnly cookie. Browser mutations require the configured Origin. Admin APIs check the current database-backed role.
+- The repository tracks `.env.example` placeholders; actual `.env` files, JWT secrets, MongoDB URIs, and passwords must remain untracked and outside source/log output.
+- PR #1 has not been merged. No deployment settings or production data were changed for this documentation update.

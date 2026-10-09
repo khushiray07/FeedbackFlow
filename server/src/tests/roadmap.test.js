@@ -52,3 +52,31 @@ it('groups records, caps each group, and sorts by votes then creation time and I
   expect(ids).toEqual([high.id, b.id, a.id]);
   expect(tied.body.groups.planned.totalItems).toBe(10);
 });
+
+it('keeps new low-vote requests discoverable from the status-filtered newest board page', async () => {
+  const user = await author();
+  const existingUnderReview = await Feedback.countDocuments({ status: 'under_review' });
+  const older = [];
+  for (let index = 0; index < 10; index++) {
+    older.push(await item(user.id, 'under_review', `Older request ${index}`, new Date(`2026-09-${String(20 - index).padStart(2, '0')}T12:00:00Z`)));
+  }
+  await Vote.create(older.map(record => ({ user: user.id, feedback: record._id })));
+
+  const newPosts = [
+    await item(user.id, 'under_review', 'M10 browser verification 2026-10-09', new Date(Date.now() + 60_000)),
+    await item(user.id, 'under_review', 'Fix the dropdown thing in searching', new Date(Date.now() + 120_000)),
+  ];
+
+  const roadmap = await request(app).get('/api/roadmap').expect(200);
+  const underReview = roadmap.body.groups.under_review;
+  expect(underReview.totalItems).toBe(existingUnderReview + 12);
+  expect(underReview.items).toHaveLength(10);
+  expect(underReview.items.some(record => newPosts.some(post => record.id === post.id))).toBe(false);
+
+  const statusBoard = await request(app).get('/api/feedback').query({ status: 'under_review' }).expect(200);
+  expect(statusBoard.body.pagination).toMatchObject({ page: 1, totalItems: existingUnderReview + 12, totalPages: 2 });
+  expect(statusBoard.body.data.slice(0, 2).map(record => record.title)).toEqual([
+    'Fix the dropdown thing in searching',
+    'M10 browser verification 2026-10-09',
+  ]);
+});

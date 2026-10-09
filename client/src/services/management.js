@@ -1,6 +1,9 @@
 import { api } from './api.js';
 export const roadmapPath = '/roadmap';
 export const adminStatsPath = '/admin/stats';
+export function roadmapStatusBoardPath(status) {
+  return `/?${new URLSearchParams({ status })}`;
+}
 export function adminFeedbackPath({ page = 1, search = '', status = '' } = {}) {
   const query = new URLSearchParams({ page: String(page), limit: '10', sort: 'newest' });
   if (search) query.set('search', search);

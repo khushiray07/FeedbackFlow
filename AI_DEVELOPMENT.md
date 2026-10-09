@@ -1,85 +1,34 @@
-# AI Development Record
+# AI-assisted development record
 
-## M4 — Feedback Creation, Details and Discovery
+This record separates work attributed to CodeZero from standalone Codex implementation. It uses the repository's `.code0` task note and implementation plan, the existing development record, and the CodeZero review summary supplied by the project owner. It does not claim that CodeZero wrote application code or invent prompts, screenshots, or conversations.
 
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
+## CodeZero contributions
 
-Codex implemented the backend feedback creation, detail, and listing APIs according to `docs/PRD.md`, `docs/ARCHITECTURE.md`, and `docs/IMPLEMENTATION_PLAN.md`. This work added strict request and query validation, server-owned author and initial status, case-insensitive escaped search, category and status filtering, newest and most-voted sorting, server-side pagination, vote counts, and authenticated voting state. The existing models, authentication middleware, and Stitch design files were preserved. Voting write endpoints, admin features, and React UI work remain for later milestones.
+| Example | Contribution | Evidence and validation |
+| --- | --- | --- |
+| Requirements and design analysis | CodeZero was asked to inspect the existing PRD, architecture, all seven Stitch screen exports, and identify scope gaps and technical risks before implementation. | The recorded task is [.code0/tasks/6ac7bbe8e8082f8dc553b37d.md](.code0/tasks/6ac7bbe8e8082f8dc553b37d.md); the plan records the reviewed sources and precedence in [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md). |
+| Milestone planning | CodeZero produced the approved M1–M12 implementation plan, including milestone acceptance criteria, test gates, architecture choices, security constraints, and a final documentation phase. | The task note says the plan was written by CodeZero when approved. The plan's milestones can be compared with the implemented repository structure and test suites. The plan is planning evidence, not proof every manual check was performed. |
+| Final read-only quality review | CodeZero reviewed the deployed project and reported 97 passing automated tests, successful read-only search/sorting/pagination/roadmap API checks, 42 production feedback posts (40 demo and two other posts), and no known production dependency vulnerabilities. It also identified the missing README, stale deployment verification text, and browser checks that remained open. | This result was supplied by the project owner for final submission. The review said authenticated production workflows and actual mobile rendering were not verified. Codex recorded that distinction in [`docs/VERIFICATION.md`](docs/VERIFICATION.md); the report is not treated as a full browser or security audit. |
 
-Verification: `npm run lint` passed; `npm run build` passed; `npm test` passed with 73 tests across 5 files. The test run used local port binding permission required by MongoMemoryServer. The focused feedback suite contains 15 passing tests.
+The CodeZero review reported local test success for authentication/authorization, feedback creation/voting, and roadmap behavior; live API success for search, sorting, pagination, and roadmap; and available MongoDB/security checks as passing. It did not verify responsive/keyboard behavior or authenticated production workflows. These are attributed to CodeZero's report rather than independent Codex observations.
 
-## M5 — Voting and Consistency
+## Standalone Codex work
 
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
+The application implementation and subsequent fixes were completed as standalone Codex work in the existing repository, following the approved product requirements, architecture, and milestone plan. Codex did not recreate the project or modify the original Stitch exports.
 
-Codex added authenticated PUT and DELETE vote endpoints using the existing Vote model and compound unique index. A duplicate-key race is treated as a successful vote only after confirming that the user's vote exists. Both endpoints verify the feedback ID and existence, remain safe on repeated requests, and return a vote count read from MongoDB. The existing feedback list, detail, and most-voted aggregation read persisted votes and required no changes. Stitch designs, admin functionality, and React UI were untouched.
+| Area | Work recorded in the repository | Validation recorded |
+| --- | --- | --- |
+| M1–M3 foundation and access control | MERN workspaces, Mongoose models/indexes, isolated test setup, cookie-based authentication, Origin validation, and database-backed roles. | The M3 record reported 58 passing tests, including authentication and access-boundary tests. |
+| M4–M6 backend journeys | Validated feedback creation and discovery; idempotent vote endpoints; public roadmap, admin statistics, and protected status updates. Vote totals are derived from persisted Vote records. | Milestone records report 73, 78, and 84 passing tests respectively, with lint and build checks. |
+| M7–M9 React integration | Reusable Stitch-inspired React layouts and components, then real auth, feedback, roadmap, and admin API integration. | Focused client tests were added. The earlier M7/M8/M9 records distinguish automated checks from browser checks not performed at those stages. |
+| M10 integration fixes | Atlas development integration debugging, strict Origin correction, admin route context fix, and browser/API verification with safe development records. | The prior verification record documents both observed workflows and remaining browser limitations. No production data was used for these development checks. |
+| M11 deployment preparation | Prepared the single-origin Render configuration, Express static serving and health route, explicit production database guard, and deployment instructions. The project owner configured and deployed the Render service. | The owner reported successful deployment at the live URL and production database. CodeZero later reported read-only API checks; neither report is presented as Codex having changed Render settings. |
+| Demo seed and submission preparation | Added the guarded, idempotent demo seed script, production dry-run support, safe admin setup instructions, this README, and updated verification/AI records. | Seed behavior was tested against an isolated MongoMemoryServer database. Current lint, build, and full test results are recorded in `docs/VERIFICATION.md`. No production seed was run during the documentation work. |
 
-Verification: `npm run lint` passed; `npm run build` passed; focused M4/M5 tests passed (20 tests across 2 files); `npm test` passed (78 tests across 6 files). Tests used local port binding permission for MongoMemoryServer.
+## Development and review practices
 
-## M6 — Roadmap and Admin Backend
-
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
-
-Codex added a public roadmap endpoint with all four status groups, accurate group totals, a ten-item limit per status, and vote-based ranking with creation-time and ID tie-breakers. The roadmap reuses the existing feedback listing service, so its items carry the same author and voting fields. Codex also added administrator-only statistics and status updates. Authorization uses the existing database-backed session middleware; status updates use strict validation and return the updated feedback data. Existing Stitch designs and frontend code were not changed.
-
-Verification: `npm run lint` passed; `npm run build` passed; focused roadmap/admin tests passed (6 tests across 2 files); `npm test` passed (84 tests across 8 files). Tests used local port binding permission for MongoMemoryServer.
-
-## M7 — React Design Foundation
-
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
-
-Codex inspected the seven Stitch HTML and image exports and the Engineered Precision design guide. It built a routed React presentation layer for the feedback board, details, roadmap, login, registration, and admin dashboard, plus a shared submit-feedback modal. Shared components include navigation, cards, badges, filters, pagination, status/empty/error display, and responsive auth and application layouts. Design tokens and component styling preserve the Stitch direction: light canvas, compact white cards, indigo actions, semantic status colors, dense type, and dark split auth panels. Unsupported Stitch elements such as OAuth, comments, notifications, attachments, fabricated testimonials, and destructive admin controls were omitted.
-
-M7 uses clearly marked presentation-only records in `client/src/preview/fixtures.js`. Login, registration, feedback submission, voting, and admin mutation controls do not simulate success. The backend and original `design/` files were not changed. Live API integration and route protection are deferred to M8/M9.
-
-Verification: `npm run lint` passed, `npm run build` passed without warnings, and `npm test` passed with 84 tests across 8 files. Vite started successfully on `http://127.0.0.1:5173/`. A reliable interactive browser check could not be completed because the available Chrome window repeatedly switched under concurrent user activity; responsive behavior and visual fidelity were reviewed from source and Stitch references, not confirmed by screenshots of the rendered React app.
-
-## M8 — Authentication and Core User Journeys
-
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
-
-Codex added a centralized relative-URL API client that sends cookie credentials and parses server errors, plus AuthContext for current-user loading, registration, login, logout, and session state. The board now reads paginated MongoDB feedback using URL-backed search, category/status filters, sorting, and page state. Details read the feedback API by ID. The submission form validates and submits to the server, and vote buttons use the existing PUT/DELETE endpoints and returned vote state/count. Unauthenticated submission and voting lead to login with an internal return path. Loading, empty, success, network, and mutation error states were added while preserving the M7 layout. The roadmap and admin pages still use M7 preview fixtures and await M9 API integration and route protection.
-
-Verification: `npm run lint` and `npm run build` passed. `npm test` passed with 84 backend tests across 8 files and 3 client API tests. The new client tests cover cookie-aware API requests, error handling, and safe login return paths. The server test suite already covers authenticated and unauthenticated feedback creation, retrieval, listing, search, pagination, and voting endpoints. A manual browser workflow against a running Express/MongoDB stack was not completed in this run; the available Chrome control was repeatedly interrupted by concurrent user window activity. No live-browser claim is made.
-
-## M9 — Roadmap and Administrator UI Integration
-
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
-
-Codex connected the public roadmap to `GET /api/roadmap`, rendering real status groups, vote-ranked cards, accurate totals, empty groups, and a truncation notice with a link to the filtered feedback board. Roadmap cards now link to real feedback details. The admin dashboard uses `GET /api/admin/stats` and the existing paginated feedback list endpoint, with real status distribution and a status selector that calls `PATCH /api/feedback/:id/status`. A confirmed update refreshes statistics and management rows. The `/admin` React route now waits for session retrieval, redirects visitors to login, and shows a forbidden state to regular users. The backend remains the authority for administrator access. M7's remaining preview fixture was removed; original Stitch exports and backend contracts were unchanged.
-
-Verification: `npm run lint` and `npm run build` passed. `npm test` passed with 84 backend tests across 8 files and 7 client tests. The new client tests cover roadmap response loading, admin query construction and status mapping, status-update request/error handling, and route-access decisions. The backend tests cover roadmap grouping/truncation, admin authorization, persisted status updates, and refreshed API results. A live browser walkthrough of role rejection, status mutation, roadmap refresh, and truncated-group navigation was not completed in this run, so those browser interactions are not claimed as verified.
-
-## Atlas Development Integration Verification (before M10)
-
-**Development mode:** Standalone Codex integration and debugging work in the existing FeedbackFlow repository. Deployment was not started.
-
-Codex verified Mongoose connectivity to the configured MongoDB Atlas development database without printing the URI or credentials. Atlas contains the expected `users`, `feedbacks`, and `votes` collections and indexes, including unique `users.email` and unique `votes(user, feedback)`. The login Origin error was reproduced: the configured origin `http://127.0.0.1:5173` was accepted, while `http://localhost:5173` was rejected. Codex made Vite bind to the configured `APP_ORIGIN` and redirect HTML navigation from alternate local hosts to that canonical origin. API mutations are not redirected, and Express Origin validation remains strict. Regression tests cover this behavior.
-
-A live Atlas-backed API journey passed for registration, cookie-backed current-user retrieval, logout, login, two feedback creations, detail retrieval, combined search/filter/pagination, newest and most-voted reads, voting, vote persistence after a Mongoose disconnect/reconnect, vote removal, and roadmap retrieval. One clearly named development test account and two feedback records with the title prefix `Atlas development check 6dd171bc` remain in Atlas; only the vote created during this check was removed. No pre-existing records were changed or deleted. Atlas reported zero configured administrator accounts, so an admin login and live status update could not be verified.
-
-Live Chrome checks confirmed that opening `http://localhost:5173/login` lands on the configured `127.0.0.1` origin, that Atlas feedback appears on the board and detail page after browser refresh, that the roadmap shows live groups, and that anonymous voting redirects to login. Browser registration, login, authenticated voting, and admin status changes were not performed in Chrome; their API behavior was checked through the Atlas-backed journey and existing automated tests.
-
-Final checks: `npm run lint` passed; `npm run build` passed with a non-failing large-chunk warning; `npm test` passed with 84 backend tests across 8 files and 9 client tests. No secrets were printed or added to source control.
-
-## M10 — End-to-End Testing, Quality Review and Bug Fixes
-
-**Development mode:** Standalone Codex verification and review in the existing FeedbackFlow repository. Deployment and M12 work were not started.
-
-Codex reviewed the M10 plan and PRD acceptance criteria and inspected authentication, Origin validation, feedback input and query validation, vote consistency, admin authorization, error handling, and the React board, details, roadmap, admin, form, modal, and session flows. `docs/VERIFICATION.md` records each FR-01 through FR-09 requirement with evidence and open browser checks. No existing Atlas record was reset or deleted, and no credentials were printed or committed.
-
-Verification so far: `npm run lint` passed; `npm run build` passed with a non-failing 527.36 kB chunk warning; `npm test` passed with 84 backend and 9 client tests, zero failures. The first sandboxed test attempt could not start MongoMemoryServer because local port binding returned `EPERM`; rerunning the same suite with local port permission passed.
-
-After the user saved local administrator environment values, Codex ran the existing `seed:admin` script, which created a new Atlas development administrator without exposing credentials. A live Atlas-backed API check passed administrator login and statistics, changed one earlier development feedback record to Planned, and confirmed the status in details, the filtered board API, and the roadmap API. A newly registered regular development test user received 403 from both admin statistics and status mutation endpoints. Chrome admin sign-in was performed by the user because they entered the password themselves.
-
-Chrome exposed a genuine bug: navigating to `/admin` produced a blank page and a console `TypeError` because `RequireAdmin` did not forward its parent outlet context to `AdminDashboard`. Codex fixed that context handoff. A browser reload then displayed live statistics and the status table. Updating one earlier development feedback record through the status selector refreshed dashboard counts and moved the card to the correct public roadmap lane. Chrome also confirmed form validation and submission, detail navigation, authenticated vote addition/removal and refresh persistence, anonymous vote redirect, search and combined filters, empty and loading states, most-voted order, pagination across two pages, logout, and direct `/admin` redirect to login after logout. Seven clearly labeled development feedback records were added to cross the ten-item page boundary; none of the user's pre-existing records were deleted or reset.
-
-After the fix, `npm run lint` passed, `npm run build` passed with the same non-failing chunk warning, and `npm test` passed with 84 backend and 9 client tests, zero failures. The user reported completing regular-user registration and seeing their name and Log out after refresh; Codex's Chrome control did not consistently expose that same session, so independent regular-user browser checks remain unverified. Responsive visual comparison, keyboard/focus sweep, and browser network-failure recovery also remain unverified. `docs/VERIFICATION.md` records these limits. M11 readiness is pending those checks.
-
-## M11 — Production Deployment Preparation
-
-**Development mode:** Standalone Codex development in the existing FeedbackFlow repository. PR #1 was not merged, and no Render service or production Atlas database was created by Codex.
-
-Codex prepared a single-origin Render deployment: Express serves the built Vite client in production, preserves JSON 404 responses for `/api/*`, exposes a database-aware `/api/health` endpoint, and binds to `0.0.0.0` in production. A production database guard rejects an omitted database name, the default `test` database, the known development `feedbackflow` database, and conflicting names in the URI. Existing cookie, Origin, admin, and error protections were retained. `docs/DEPLOYMENT.md` records exact Render settings, Atlas network access, required environment variable names, safe admin setup, and the public smoke checklist. No development Atlas data, Stitch exports, secrets, or authentication logic were changed.
-
-Verification: `npm run lint` passed; `npm run build` passed with the existing non-failing bundle-size warning; `npm test` passed with 86 backend and 9 client tests, zero failures. A local production-mode process connected to a disposable MongoDB database named `feedbackflow_prod`. Health returned 200 JSON; four direct React routes returned the build; an unknown API route returned JSON 404; a wrong Origin returned 403; registration set an HttpOnly, Secure, SameSite=Lax cookie. A scan of the built assets found none of the configured JWT, MongoDB URI, or admin password values. Public Render deployment and HTTPS/Atlas smoke checks remain pending account configuration and deployment; M11 is not claimed complete.
+- Product behavior was checked against `docs/PRD.md`; API and data decisions against `docs/ARCHITECTURE.md`; milestone scope against `docs/IMPLEMENTATION_PLAN.md`.
+- Backend tests use a disposable local MongoDB process. They do not load application `.env` values or connect to Atlas.
+- Demo users receive random, undisclosed password hashes. Demo seeding uses deterministic IDs, inserts only missing records, and has no delete or update path for existing feedback.
+- Production secrets are supplied through environment configuration and are not recorded here. Admin passwords and MongoDB URIs were not added to source or logs.
+- CodeZero review results are labeled as reported evidence. Browser, accessibility, and production checks are not inferred from a passing build or automated tests.

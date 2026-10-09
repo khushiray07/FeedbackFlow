@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { afterEach, test } from 'node:test';
-import { adminAccessState, adminFeedbackPath, adminStatsPath, roadmapPath, statusCounts, updateFeedbackStatus } from '../src/services/management.js';
+import { adminAccessState, adminFeedbackPath, adminStatsPath, roadmapPath, roadmapStatusBoardPath, statusCounts, updateFeedbackStatus } from '../src/services/management.js';
 import { api, ApiError } from '../src/services/api.js';
 const originalFetch = globalThis.fetch;
 afterEach(() => { globalThis.fetch = originalFetch; });
@@ -13,6 +13,9 @@ test('loads public roadmap groups and totals from the backend', async () => {
   assert.deepEqual(result.groups, groups);
   assert.equal(result.groups.planned.totalItems, 11);
   assert.equal(result.limitPerStatus, 10);
+});
+test('routes the roadmap View all action to the corresponding status-filtered board', () => {
+  assert.equal(roadmapStatusBoardPath('under_review'), '/?status=under_review');
 });
 test('builds the paginated admin list query and maps all status totals', () => {
   assert.equal(adminStatsPath, '/admin/stats');
