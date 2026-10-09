@@ -1,5 +1,6 @@
 import app from './src/app.js';
 import { connectDatabase, disconnectDatabase } from './src/config/db.js';
+import { validateAuthConfig } from './src/utils/session.js';
 
 let server;
 let shuttingDown = false;
@@ -15,6 +16,7 @@ async function shutdown() {
 }
 
 try {
+  validateAuthConfig();
   const port = Number(process.env.PORT || 3000);
   if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('PORT must be an integer from 1 to 65535.');
   await connectDatabase();

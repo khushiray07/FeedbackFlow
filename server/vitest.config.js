@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitest/config';
+import { randomBytes } from 'node:crypto';
 
 export default defineConfig({
   test: {
@@ -13,6 +14,8 @@ export default defineConfig({
       NODE_ENV: 'test',
       MONGODB_URI: '',
       MONGODB_TEST_URI: '',
+      JWT_SECRET: randomBytes(32).toString('hex'),
+      APP_ORIGIN: 'http://localhost:5173',
     },
   },
 });
