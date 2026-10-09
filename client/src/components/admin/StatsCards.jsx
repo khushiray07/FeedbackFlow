@@ -1,0 +1,1 @@
+export default function StatsCards({ items }) { return <div className="stats-grid">{items.map(({ label, value, note }) => <div className="stat-card" key={label}><span className="stat-label">{label}</span><strong>{value}</strong><span className="muted">{note}</span></div>)}</div>; }
