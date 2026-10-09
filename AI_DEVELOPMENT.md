@@ -23,3 +23,13 @@ Verification: `npm run lint` passed; `npm run build` passed; focused M4/M5 tests
 Codex added a public roadmap endpoint with all four status groups, accurate group totals, a ten-item limit per status, and vote-based ranking with creation-time and ID tie-breakers. The roadmap reuses the existing feedback listing service, so its items carry the same author and voting fields. Codex also added administrator-only statistics and status updates. Authorization uses the existing database-backed session middleware; status updates use strict validation and return the updated feedback data. Existing Stitch designs and frontend code were not changed.
 
 Verification: `npm run lint` passed; `npm run build` passed; focused roadmap/admin tests passed (6 tests across 2 files); `npm test` passed (84 tests across 8 files). Tests used local port binding permission for MongoMemoryServer.
+
+## M7 — React Design Foundation
+
+**Development mode:** Standalone Codex development in the existing FeedbackFlow repository.
+
+Codex inspected the seven Stitch HTML and image exports and the Engineered Precision design guide. It built a routed React presentation layer for the feedback board, details, roadmap, login, registration, and admin dashboard, plus a shared submit-feedback modal. Shared components include navigation, cards, badges, filters, pagination, status/empty/error display, and responsive auth and application layouts. Design tokens and component styling preserve the Stitch direction: light canvas, compact white cards, indigo actions, semantic status colors, dense type, and dark split auth panels. Unsupported Stitch elements such as OAuth, comments, notifications, attachments, fabricated testimonials, and destructive admin controls were omitted.
+
+M7 uses clearly marked presentation-only records in `client/src/preview/fixtures.js`. Login, registration, feedback submission, voting, and admin mutation controls do not simulate success. The backend and original `design/` files were not changed. Live API integration and route protection are deferred to M8/M9.
+
+Verification: `npm run lint` passed, `npm run build` passed without warnings, and `npm test` passed with 84 tests across 8 files. Vite started successfully on `http://127.0.0.1:5173/`. A reliable interactive browser check could not be completed because the available Chrome window repeatedly switched under concurrent user activity; responsive behavior and visual fidelity were reviewed from source and Stitch references, not confirmed by screenshots of the rendered React app.
