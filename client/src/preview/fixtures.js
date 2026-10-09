@@ -6,5 +6,3 @@ export const previewFeedback = [
   { id: 'preview-4', title: 'Two-factor authentication for Security Keys', description: 'Add stronger account protection with passkeys and hardware security keys.', category: 'feature', status: 'completed', author: 'Marcus Vance', date: 'Sep 29, 2026', voteCount: 84 },
   { id: 'preview-5', title: 'Keyboard navigation shortcuts across the feedback board', description: 'Make it easier to search, open, and review feedback with a keyboard.', category: 'improvement', status: 'under_review', author: 'Alex Rivera', date: 'Sep 22, 2026', voteCount: 41 },
 ];
-export const statusLabels = { under_review: 'Under Review', planned: 'Planned', in_progress: 'In Progress', completed: 'Completed' };
-export const categories = ['feature', 'improvement', 'bug', 'integration'];
